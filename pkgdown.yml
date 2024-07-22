@@ -1,0 +1,11 @@
+pandoc: 3.1.11
+pkgdown: 2.1.0
+pkgdown_sha: ~
+articles:
+  data_cleaning: data_cleaning.html
+  data_mapping: data_mapping.html
+  introduction: introduction.html
+last_built: 2024-07-22T17:47Z
+urls:
+  reference: https://tech-acs.github.io/crvsreportpackage/reference
+  article: https://tech-acs.github.io/crvsreportpackage/articles
