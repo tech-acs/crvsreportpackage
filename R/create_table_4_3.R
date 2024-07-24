@@ -14,6 +14,7 @@
 #'
 #' @examples t4.3 <- create_t4.3(bth_data, dobyr, 2022)
 
+
 create_t4.3 <- function(data, date_var, data_year = 2022, tablename = "Table_4_3"){
   output <- data |>
     filter(is.na(sbind) & {{date_var}} == data_year) |>
@@ -22,9 +23,16 @@ create_t4.3 <- function(data, date_var, data_year = 2022, tablename = "Table_4_3
     pivot_wider(names_from = usual_res_plocc, values_from = total, values_fill = 0) |>
     adorn_totals(c("col", "row"))
 
+  if (!"Not stated" %in% colnames(output)) {
+    output <- output %>%
+      mutate(`Not stated` = 0)
+  }
+
+  output <- output |>
+    select(c(rgnpob, `Same as place of occurrence`, `Other location`, `Not stated`, Total ))
+
   write.csv(output, paste0("./outputs/", tablename, ".csv"), row.names = FALSE)
   return(output)
 }
-
 
 

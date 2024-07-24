@@ -4,7 +4,7 @@
 \alias{create_t3.1}
 \title{Create Table 3.1 and output csv file}
 \usage{
-create_t3.1(births_data, deaths_data)
+create_t3.1(bth_data, dth_data, bth_yr_var, dth_yr_var)
 }
 \arguments{
 \item{births_data}{name of births data frame}
@@ -18,6 +18,6 @@ Data frame with tabulated result
 Create Table 3.1 and output csv file
 }
 \examples{
-t3.1 <- create_t3.1(bth_data, dth_data)
+t3.1 <- create_t3.1(bth_data = bth_data, dth_data = dth_data, bth_yr_var = dobyr, dth_yr_var = dodyr)
 
 }

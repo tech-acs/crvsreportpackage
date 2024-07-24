@@ -19,7 +19,7 @@ create_t3.2_t3.3 <- function(data, occ_var, topic = NA, tablename = "table_3_2")
   if(topic == "births"){
     output <- data |>
       filter(is.na(sbind) & !doryr %in% c("", "2023") &
-               {{occ_var}} %in%c ((max_value - 5) : (max_value - 1))) |>
+               {{occ_var}} %in%c ((max_value - 4) : (max_value))) |>
       group_by(doryr, {{occ_var}}) |>
       summarise(Total = n())
 
@@ -36,7 +36,7 @@ create_t3.2_t3.3 <- function(data, occ_var, topic = NA, tablename = "table_3_2")
       adorn_totals("row", name = "Grand total")
   }else if(topic == "deaths"){
     output <- data |>
-      filter(!doryr %in% c("", "2023") & {{occ_var}} %in% c((max_value - 5) : (max_value - 1))) |>
+      filter(!doryr %in% c("", "2023") & {{occ_var}} %in% c((max_value - 4) : (max_value))) |>
       group_by(doryr, {{occ_var}}) |>
       summarise(Total = n())
 

@@ -16,13 +16,13 @@ create_t3.1 <- function(bth_data, dth_data, bth_yr_var, dth_yr_var){
   max_value <- bth_data %>% pull({{bth_yr_var}}) %>% max(na.rm = TRUE)
 
   outputb <- bth_data |>
-    filter(is.na(sbind) & {{bth_yr_var}} %in% c((max_value - 5) : (max_value - 1))) |>
+    filter(is.na(sbind) & {{bth_yr_var}} %in% c((max_value - 4) : (max_value))) |>
     group_by({{bth_yr_var}}, timeliness) |>
     summarise(total = n()) |>
     mutate(type := "1 Live births") |>
     rename(year = {{bth_yr_var}})
   outputd <- dth_data |>
-    filter({{dth_yr_var}} %in% c((max_value - 5) : (max_value - 1))) |>
+    filter({{dth_yr_var}} %in% c((max_value - 4) : (max_value))) |>
     group_by({{dth_yr_var}}, timeliness) |>
     summarise(total = n()) |>
     mutate(type := "2 Deaths") |>
@@ -33,7 +33,26 @@ create_t3.1 <- function(bth_data, dth_data, bth_yr_var, dth_yr_var){
     arrange(match(timeliness, c("Current", "Late", "Delayed"))) |>
     adorn_totals("row", name = "Grand total")
 
+
+  outputb <- outputb |>
+    pivot_wider(names_from = timeliness, values_from = total) |>
+    adorn_totals("col") |>
+    mutate(current = Current/Total,
+           late = Late/Total,
+           delayed = Delayed/Total) |>
+    select(year, current, late, delayed)
+
+  outputd <- outputd |>
+    pivot_wider(names_from = timeliness, values_from = total) |>
+    adorn_totals("col") |>
+    mutate(current = Current/Total,
+           late = Late/Total,
+           delayed = Delayed/Total) |>
+    select(year, current, late, delayed)
+
   write.csv(output, "./outputs/Table_3_1.csv", row.names = FALSE)
+  write.csv(outputb, "./outputs/Figure_3_1_births.csv", row.names = FALSE)
+  write.csv(outputd, "./outputs/Figure_3_1_deaths.csv", row.names = FALSE)
 
   return(output)
 }

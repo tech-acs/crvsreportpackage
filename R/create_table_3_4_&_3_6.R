@@ -35,7 +35,8 @@ create_t3.4_and_3.6 <- function(data, est_data, by_var, topic = NA, tablename = 
 
   output <- output |>
     mutate(completeness = round((total / total_est) * 100, 2)) |>
-    pivot_wider(names_from = sex, values_from = c(total, total_est, completeness))
+    pivot_wider(names_from = sex, values_fill = 0, values_from = c(total, total_est, completeness)) |>
+    mutate_all(~ ifelse(is.na(.), 0, .))
 
   write.csv(output, paste0("./outputs/", tablename, ".csv"), row.names = FALSE)
   return(output)
