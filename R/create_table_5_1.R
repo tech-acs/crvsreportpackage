@@ -78,9 +78,13 @@ create_table_5.1 <- function(death_data = dth_data, death_year_var = dodyr, deat
     mutate(year = gsub("population_", "", year)) |>
     group_by(year, sex) |>
     summarise(total_pop = sum(count)) |>
-    arrange(sex) |>
-    select(year, sex, total_pop) |>
-    filter(sex == "total")
+    arrange(sex)
+
+  pop_for_2 <- pop_for_dth |>
+    mutate(sex = "total") |>
+    group_by(year, sex) |>
+    summarise(total_pop = sum(total_pop))
+
 
   cdr <- merge(dtht, pop_for_dth, by.x = c(dth_by_var_name, "sex"), by.y = c("year", "sex")) |>
     mutate(crude_death_rate = round_excel((reg_dths/total_pop)*1000, 2)) |>
