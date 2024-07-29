@@ -1,9 +1,8 @@
 Package: crvsreportpackage
 Type: Package
 Title: Package for CRVS Report
-Version: 0.1.8
-Authors@R: c(
-  person(given="Tesfaye",
+Version: 0.2.1
+Authors@R: c(person(given="Tesfaye",
          family="Belay",
          role=c("aut","cre"),
          email= "belayt@un.org"),
@@ -45,11 +44,19 @@ Imports:
     fs,
     htmlwidgets,
     janitor,
+    lubridate,
+    pkgdown,
+    purrr,
     reactable,
+    readr,
     renv,
+    rlang,
+    sf,
     shiny,
     stringr,
     testthat,
+    tidygeocoder,
     tidyr,
     tidyverse,
     writexl
+URL: https://tech-acs.github.io/crvsreportpackage/

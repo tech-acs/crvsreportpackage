@@ -4,22 +4,35 @@
 \alias{create_t4.1}
 \title{Calculates Table 4.1 Births summary table}
 \usage{
-create_t4.1(data, date_var, tablename = "Table_4_1")
+create_t4.1(
+  data,
+  est_data,
+  pops,
+  date_var = "dobyr",
+  tablename = "Table_4_1",
+  output_path = NULL
+)
 }
 \arguments{
 \item{data}{births data frame}
 
+\item{est_data}{estimate data frame}
+
+\item{pops}{population data frame}
+
 \item{date_var}{variable for year}
 
 \item{tablename}{name for csv output use _ instead of . for names}
+
+\item{output_path}{The path to export the generated table}
 }
 \value{
 data frame with tabulated results
 }
 \description{
-Calculates Table 4.1 Births summary table
+Table 4.1 Summary statistics on fertility by year of occurrence
 }
 \examples{
-t4.1 <- create_t4.1(bth_data, date_var = dobyr, tablename = "Table_4_1")
+t4.1 <- create_t4.1(bth_data, est_data, pops, date_var = dobyr, tablename = "Table_4_1")
 
 }

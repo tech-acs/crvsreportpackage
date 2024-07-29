@@ -1,0 +1,150 @@
+---
+title: "Data cleaning"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Data cleaning}
+  %\VignetteEncoding{UTF-8}
+  %\VignetteEngine{knitr::rmarkdown}
+editor_options: 
+  chunk_output_type: console
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  message=FALSE, 
+  warning=FALSE
+)
+```
+
+```{r setup, echo=FALSE}
+library(tidyverse) ; library(tidygeocoder) ; library(sf) 
+```
+
+Preparing civil registration data for tabulation with the crvsreportpackage is a crucial step but there are several simple routines in R that can help make it less time consuming.
+
+The [tidyverse](https://www.tidyverse.org/) collection of packages contains a number of useful functions for cleaning data. In particular, the [forcats](https://forcats.tidyverse.org/index.html) package helps to manage factors and [lubridate](https://lubridate.tidyverse.org/) is handy when dealing with dates.
+
+Let's load the suite of packages.
+
+```{r, eval=FALSE}
+library(tidyverse)
+```
+
+Then we'll load the sample `bth_data` to practice with.
+
+```{r}
+# import .csv file
+bth_data <- read_csv("../inst/extdata/created_birth_data.csv")
+
+# print the first 10 rows
+slice(bth_data, 1:10)
+```
+
+## Factors
+### Show unique values in character variables
+If you want to quickly scan all the known values of character variables in your dataset run:
+```{r}
+map(select_if(bth_data, is.character), unique)
+```
+
+### Convert character variable to a factor
+It is common practice to read known values of a variable as characters, hence `stringsAsFactors = FALSE`. However, once you have read in the data you may wish to convert a character variable into a factor.
+```{r}
+# check data type
+class(bth_data$birth1g)
+# convert character variable to factor
+bth_data$birth1g <- as_factor(bth_data$birth1g)
+# check data type again
+class(bth_data$birth1g)
+```
+
+### Change order of levels
+Sometimes the order of levels in a factor variable is not very helpful. The [`fct_relevel()`](https://forcats.tidyverse.org/reference/fct_relevel.html) function allows you to customise the order of levels.
+```{r}
+# check the levels of the factor
+bth_data$birth1g |> levels()
+# manually change the order of levels
+bth_data$birth1g |> fct_relevel("Single", "Twin", "Triplet", "Quadruplet or higher") |> levels()
+```
+
+### Recode levels
+Sometimes values of a variable are coded incorrectly. The [`fct_recode()`](https://forcats.tidyverse.org/reference/fct_recode.html) function enables you to change factor levels by hand.
+```{r}
+bth_data$birth3l <- as_factor(bth_data$birth3l)
+bth_data$birth3l |>  levels()
+bth_data$birth3l |>  fct_recode("Lagos" = "RegionA", "Kano" = "RegionB") %>% levels()
+```
+
+## Dates
+There are a few derived variables needed for the CRVS report tables that require handling dates. For example, we might need to derive the age of a mother from her date of birth.
+
+### Convert a date to a year
+```{r}
+year("1998-07-18")
+```
+
+### Convert string to a date
+```{r}
+dmy("18.07.2024")
+```
+
+## Missing data
+How we handle missing data is a key consideration: impute or drop values? But first we need to identify any missing values in the data.
+
+### Count number of missing values in each column
+```{r}
+bth_data |> map_dbl(~sum(is.na(.)))
+```
+
+### Convert selected string in single column to NA
+We have identified no missing values in our dataset. However, if they were present you could adapt the code below to the variable.
+```{r, eval=FALSE}
+bth_data |> mutate(col1 = na_if(col1, "Unknown"))
+```
+
+## Geospatial
+Simple point in polygon analysis can be useful to help identify which region a birth was registered in or whether a usual place of residence is urban or rural. To demonstrate we will load the states of Nigeria and identify which state the [National Bureau of Statistics](https://nigerianstat.gov.ng/) is located in.
+
+First we load the necessary packages.
+```{r}
+library(tidygeocoder) # for retrieving coordinates for a location
+library(sf) # for handling spatial data
+```
+
+Then load the 36 states of Nigeria using vector boundary data supplied by [Natural Earth](https://www.naturalearthdata.com).
+```{r}
+states <- read_sf("data/nigeria.geojson")
+```
+
+Note that you can also retrieve the state boundaries of Nigeria (and any country) using the [rnaturalearth](https://docs.ropensci.org/rnaturalearth/) package.
+```{r, eval=FALSE}
+states <- ne_states(country = "nigeria", returnclass = "sf")
+```
+
+Then we will retrieve the coordinates (lat,lon) of the NBS head office using the `geo()` function from the [geocoder](https://jessecambon.github.io/tidygeocoder/index.html) package. We'll then convert it into an sf object.
+
+```{r}
+nbs <- geo("1 Wole Olanipekun St, Abuja, Nigeria", method = "arcgis", full_results = FALSE) |> 
+  st_as_sf(crs = 4326, coords = c("long", "lat"))
+```
+
+Load nbs
+
+```{r, echo=FALSE}
+nbs
+```
+
+Next, we'll plot the results.
+```{r}
+plot(states$geometry)
+plot(nbs$geometry, add = T, col = "red", pch = 16)
+```
+
+Finally, we can use the [`st_intersection()`](https://r-spatial.github.io/sf/reference/geos_binary_ops.html) function from the [sf](https://r-spatial.github.io/sf/index.html) package to identify the state the NBS sits within.
+
+```
+st_intersection(nbs, states) |> 
+  st_drop_geometry() # convert the results into a dataframe
+```

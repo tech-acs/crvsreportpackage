@@ -1,0 +1,19 @@
+url: https://tech-acs.github.io/crvsreportpackage/
+template:
+  bootstrap: 5
+  light-switch: true
+
+articles:
+- title: Articles
+  navbar: ~
+  contents:
+  - data_cleaning
+  - data_mapping
+  - table_templates
+
+home:
+  links:
+  - text: Browse source code
+    href: https://github.com/tech-acs/crvsreportpackage
+  - text: Report a bug
+    href: https://github.com/tech-acs/crvsreportpackage/issues

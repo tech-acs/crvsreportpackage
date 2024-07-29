@@ -4,7 +4,13 @@
 \alias{create_t4.7}
 \title{Create Table 4.7}
 \usage{
-create_t4.7(data, date_var, data_year = 2022, tablename = NA)
+create_t4.7(
+  data,
+  date_var,
+  data_year = NA,
+  tablename = "Table_4_7",
+  output_path = NULL
+)
 }
 \arguments{
 \item{data}{data frame being used}
@@ -14,12 +20,14 @@ create_t4.7(data, date_var, data_year = 2022, tablename = NA)
 \item{data_year}{year of data}
 
 \item{tablename}{name of the table being saved as a csv file}
+
+\item{output_path}{The path to export the generated table}
 }
 \value{
 data frames for tabulated versions of Table 4.7
 }
 \description{
-Create Table 4.7
+Table 4.7 Live births by place of occurrence, site of delivery and attendant at birth
 }
 \examples{
 t4.7 <- create_table_4.7(bth_data, dobyr, 2022, tablename = "Table_4_7")

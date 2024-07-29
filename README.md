@@ -1,5 +1,9 @@
 # crvsreportpackage
 
+<!-- badges: start -->
+[![Lifecycle: experimental](https://img.shields.io/badge/lifecycle-experimental-orange.svg)](https://lifecycle.r-lib.org/articles/stages.html#experimental)
+<!-- badges: end -->
+
 ## Overview
 
 This package contains some useful functions to create a crvs report.
@@ -108,6 +112,14 @@ install()   # Installs the package
 
 After these steps the package should be installed with the latest changes to the functions.
 This should mean the package is in the right state to be updated on the online repo.
+
+Before you make any big changes, double check that all the unit test are working
+as expected, by running them manually:
+
+```R
+testthat::test_dir("tests/testthat")
+```
+
 
 ## Documentation
 

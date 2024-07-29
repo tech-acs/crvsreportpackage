@@ -18,9 +18,9 @@
 create_t5_5 <- function(data, date_var = dodyr, data_year = 2022, tablename = NA){
   output <- data |>
     filter({{date_var}} == data_year) |>
-    group_by(ruindpod, pod) |>
+    group_by(ruindpod, death1n) |>
     summarise(total = n()) |>
-    pivot_wider(names_from = pod, values_from = total, values_fill = 0) |>
+    pivot_wider(names_from = death1n, values_from = total, values_fill = 0) |>
     adorn_totals(c("col")) |>
     mutate(ruindpod = case_when(
       ruindpod == "Total" ~ "All deaths",
@@ -29,12 +29,12 @@ create_t5_5 <- function(data, date_var = dodyr, data_year = 2022, tablename = NA
 
   outputb <- data |>
     filter({{date_var}} == data_year) |>
-    group_by(rgnpod, pod) |>
+    group_by(death1c, death1n) |>
     summarise(Total = n()) |>
-    pivot_wider(names_from = pod, values_from = Total, values_fill = 0) |>
+    pivot_wider(names_from = death1n, values_from = Total, values_fill = 0) |>
     adorn_totals(c("col", "row")) |>
-    mutate(rgnpod = ifelse(is.na(rgnpod), "Not Stated", rgnpod)) |>
-    rename(`Place of occurrence` = rgnpod, `Total number of deaths` = Total)
+    mutate(death1c = ifelse(is.na(death1c), "Not Stated", death1c)) |>
+    rename(`Place of occurrence` = death1c, `Total number of deaths` = Total)
 
   output <- rbind(output, outputb)
 

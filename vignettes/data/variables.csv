@@ -1,0 +1,319 @@
+variable_id,variable_name,event,characteristic,source,type,id
+birth1a,Date of occurrence,Birth,Event,Direct,Date,table_3_01
+birth1a,Date of occurrence,Birth,Event,Direct,Date,table_3_02 
+birth1a,Date of occurrence,Birth,Event,Direct,Date,table_3_04 
+birth1a,Date of occurrence,Birth,Event,Direct,Date,table_3_05 
+birth1a,Date of occurrence,Birth,Event,Direct,Date,table_3_08 
+birth1a,Date of occurrence,Birth,Event,Direct,Date,table_3_11
+birth1a,Date of occurrence,Birth,Event,Direct,Date,table_4_02 
+birth1a,Date of occurrence,Birth,Event,Direct,Date,table_4_03 
+birth1a,Date of occurrence,Birth,Event,Direct,Date,table_4_04 
+birth1a,Date of occurrence,Birth,Event,Direct,Date,table_4_05 
+birth1a,Date of occurrence,Birth,Event,Direct,Date,table_4_06 
+birth1a,Date of occurrence,Birth,Event,Direct,Date,table_4_07 
+birth1a,Date of occurrence,Birth,Event,Direct,Date,table_4_08 
+birth1a,Date of occurrence,Birth,Event,Direct,Date,table_4_09 
+birth1a,Date of occurrence,Birth,Event,Direct,Date,table_4_10
+birth1a,Date of occurrence,Birth,Event,Direct,Date,table_4_11
+birth1a,Date of occurrence,Birth,Event,Direct,Date,table_8_01 
+birth1a,Date of occurrence,Birth,Event,Direct,Date,table_8_02 
+birth1a,Date of occurrence,Birth,Event,Direct,Date,table_8_03 
+birth1a,Date of occurrence,Birth,Event,Direct,Date,table_8_04 
+birth1a,Date of occurrence,Birth,Event,Direct,Date,table_3_01 
+birth1a,Date of occurrence,Birth,Event,Direct,Date,table_4_01 
+birth1a,Date of occurrence,Birth,Event,Direct,Date,table_4_02 
+birth1a,Date of occurrence,Birth,Event,Direct,Date,table_4_03 
+birth1a,Date of occurrence,Birth,Event,Direct,Date,table_4_04 
+birth1a,Date of occurrence,Birth,Event,Direct,Date,table_4_05 
+birth1b,Date of registration,Birth,Event,Direct,Date,table_3_01 
+birth1b,Date of registration,Birth,Event,Direct,Date,table_3_02 
+birth1b,Date of registration,Birth,Event,Direct,Date,table_3_04 
+birth1b,Date of registration,Birth,Event,Direct,Date,table_3_05 
+birth1b,Date of registration,Birth,Event,Direct,Date,table_3_08 
+birth1b,Date of registration,Birth,Event,Direct,Date,table_3_11
+birth1b,Date of registration,Birth,Event,Direct,Date,table_4_02 
+birth1b,Date of registration,Birth,Event,Direct,Date,table_4_03 
+birth1b,Date of registration,Birth,Event,Direct,Date,table_4_04 
+birth1b,Date of registration,Birth,Event,Direct,Date,table_4_05 
+birth1b,Date of registration,Birth,Event,Direct,Date,table_4_06 
+birth1b,Date of registration,Birth,Event,Direct,Date,table_4_07 
+birth1b,Date of registration,Birth,Event,Direct,Date,table_4_08 
+birth1b,Date of registration,Birth,Event,Direct,Date,table_4_09 
+birth1b,Date of registration,Birth,Event,Direct,Date,table_4_10
+birth1b,Date of registration,Birth,Event,Direct,Date,table_4_11
+birth1b,Date of registration,Birth,Event,Direct,Date,table_3_01 
+birth1c,Place of occurrence,Birth,Event,Direct,Character,table_4_02 
+birth1c,Place of occurrence,Birth,Event,Direct,Character,table_4_03 
+birth1c,Place of occurrence,Birth,Event,Direct,Character,table_4_07 
+birth2a,Sex,Birth,Newborn,Direct,Character,table_3_04 
+birth2a,Sex,Birth,Newborn,Direct,Character,table_3_05 
+birth2a,Sex,Birth,Newborn,Direct,Character,table_3_08 
+birth2a,Sex,Birth,Newborn,Direct,Character,table_4_02 
+birth2a,Sex,Birth,Newborn,Direct,Character,table_8_01 
+birth2a,Sex,Birth,Newborn,Direct,Character,table_8_02 
+birth3l,Place of usual residence,Birth,Mother,Direct,Character,table_3_05 
+birth3l,Place of usual residence,Birth,Mother,Direct,Character,table_3_08 
+birth3l,Place of usual residence,Birth,Mother,Direct,Character,table_4_03 
+birth3l,Place of usual residence,Birth,Mother,Direct,Character,table_4_08 
+birth3l,Place of usual residence,Birth,Mother,Direct,Character,table_8_02 
+birth3l,Place of usual residence,Birth,Mother,Direct,Character,table_8_04 
+birth3l,Place of usual residence,Birth,Mother,Direct,Character,table_4_02 
+birth1g,"Type of birth (i.e., single, twin, triplet, quadruplet or higher multiple delivery)",Birth,Event,Direct,Character,table_4_04 
+birth3b,Age,Birth,Mother,Derived,Integer,table_3_11
+birth3b,Age,Birth,Mother,Derived,Integer,table_4_04 
+birth3b,Age,Birth,Mother,Derived,Integer,table_4_05 
+birth3b,Age,Birth,Mother,Derived,Integer,table_4_06 
+birth3b,Age,Birth,Mother,Derived,Integer,table_4_09 
+birth3b,Age,Birth,Mother,Derived,Integer,table_4_10
+birth3b,Age,Birth,Mother,Derived,Integer,table_4_11
+birth3b,Age,Birth,Mother,Derived,Integer,table_8_03 
+birth3b,Age,Birth,Mother,Derived,Integer,table_8_04 
+birth3b,Age,Birth,Mother,Derived,Integer,table_4_02 
+birth3b,Age,Birth,Mother,Derived,Integer,table_4_04 
+birth3b,Age,Birth,Mother,Derived,Integer,table_4_05 
+birth3c,Marital status,Birth,Mother,Direct,Character,table_4_05 
+birth3c,Marital status,Birth,Mother,Direct,Character,table_4_06 
+birth3n,Urban/rural residence,Birth,Mother,Derived,Character,table_4_05 
+birth3n,Urban/rural residence,Birth,Mother,Derived,Character,table_4_06 
+birth3n,Urban/rural residence,Birth,Mother,Derived,Character,table_4_09 
+birth3n,Urban/rural residence,Birth,Mother,Derived,Character,table_4_10
+birth3n,Urban/rural residence,Birth,Mother,Derived,Character,table_4_11
+birth3n,Urban/rural residence,Birth,Mother,Derived,Character,table_4_03 
+birth1h,Attendant at birth,Birth,Event,Direct,Character,table_4_07 
+birth1i,"Type of place of occurrence (hospital, home, etc.)",Birth,Event,Additional,Character,table_4_07 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_3_01 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_3_03 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_3_06 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_3_07 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_3_09 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_3_10
+death1a,Date of occurrence,Death,Event,Direct,Date,table_3_12
+death1a,Date of occurrence,Death,Event,Direct,Date,table_5_02 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_5_03 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_5_04 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_5_05 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_5_06 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_5_07 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_5_08 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_5_09 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_5_10
+death1a,Date of occurrence,Death,Event,Direct,Date,table_5_11
+death1a,Date of occurrence,Death,Event,Direct,Date,table_5_12
+death1a,Date of occurrence,Death,Event,Direct,Date,table_6_01 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_6_02 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_6_03 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_6_04 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_6_05 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_6_06 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_6_07 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_6_08 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_6_09 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_6_10
+death1a,Date of occurrence,Death,Event,Direct,Date,table_8_01 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_8_02 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_8_03 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_8_04 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_3_01 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_5_01 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_5_02 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_5_03 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_5_04 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_5_05 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_6_01 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_6_02 
+death1a,Date of occurrence,Death,Event,Direct,Date,table_6_03 
+death1b,Date of registration,Death,Event,Direct,Date,table_3_01 
+death1b,Date of registration,Death,Event,Direct,Date,table_3_03 
+death1b,Date of registration,Death,Event,Direct,Date,table_3_06 
+death1b,Date of registration,Death,Event,Direct,Date,table_3_07 
+death1b,Date of registration,Death,Event,Direct,Date,table_3_09 
+death1b,Date of registration,Death,Event,Direct,Date,table_3_10
+death1b,Date of registration,Death,Event,Direct,Date,table_3_12
+death1b,Date of registration,Death,Event,Direct,Date,table_5_02 
+death1b,Date of registration,Death,Event,Direct,Date,table_5_03 
+death1b,Date of registration,Death,Event,Direct,Date,table_5_04 
+death1b,Date of registration,Death,Event,Direct,Date,table_5_05 
+death1b,Date of registration,Death,Event,Direct,Date,table_5_06 
+death1b,Date of registration,Death,Event,Direct,Date,table_5_07 
+death1b,Date of registration,Death,Event,Direct,Date,table_5_08 
+death1b,Date of registration,Death,Event,Direct,Date,table_5_09 
+death1b,Date of registration,Death,Event,Direct,Date,table_5_10
+death1b,Date of registration,Death,Event,Direct,Date,table_5_11
+death1b,Date of registration,Death,Event,Direct,Date,table_5_12
+death1b,Date of registration,Death,Event,Direct,Date,table_6_01 
+death1b,Date of registration,Death,Event,Direct,Date,table_6_02 
+death1b,Date of registration,Death,Event,Direct,Date,table_6_03 
+death1b,Date of registration,Death,Event,Direct,Date,table_6_04 
+death1b,Date of registration,Death,Event,Direct,Date,table_6_05 
+death1b,Date of registration,Death,Event,Direct,Date,table_6_06 
+death1b,Date of registration,Death,Event,Direct,Date,table_6_07 
+death1b,Date of registration,Death,Event,Direct,Date,table_6_08 
+death1b,Date of registration,Death,Event,Direct,Date,table_6_09 
+death1b,Date of registration,Death,Event,Direct,Date,table_6_10
+death1b,Date of registration,Death,Event,Direct,Date,table_8_01 
+death1b,Date of registration,Death,Event,Direct,Date,table_8_02 
+death1b,Date of registration,Death,Event,Direct,Date,table_8_03 
+death1b,Date of registration,Death,Event,Direct,Date,table_8_04 
+death1b,Date of registration,Death,Event,Direct,Date,table_3_01 
+death1b,Date of registration,Death,Event,Direct,Date,table_5_01 
+death1b,Date of registration,Death,Event,Direct,Date,table_5_02 
+death1b,Date of registration,Death,Event,Direct,Date,table_5_03 
+death1b,Date of registration,Death,Event,Direct,Date,table_5_04 
+death1b,Date of registration,Death,Event,Direct,Date,table_5_05 
+death1b,Date of registration,Death,Event,Direct,Date,table_6_01 
+death1b,Date of registration,Death,Event,Direct,Date,table_6_02 
+death1b,Date of registration,Death,Event,Direct,Date,table_6_03 
+death2c,Sex,Death,Decedent,Direct,Character,table_3_06 
+death2c,Sex,Death,Decedent,Direct,Character,table_3_07 
+death2c,Sex,Death,Decedent,Direct,Character,table_3_09 
+death2c,Sex,Death,Decedent,Direct,Character,table_3_10
+death2c,Sex,Death,Decedent,Direct,Character,table_3_12
+death2c,Sex,Death,Decedent,Direct,Character,table_5_02 
+death2c,Sex,Death,Decedent,Direct,Character,table_5_03 
+death2c,Sex,Death,Decedent,Direct,Character,table_5_04 
+death2c,Sex,Death,Decedent,Direct,Character,table_5_06 
+death2c,Sex,Death,Decedent,Direct,Character,table_5_07 
+death2c,Sex,Death,Decedent,Direct,Character,table_5_11
+death2c,Sex,Death,Decedent,Direct,Character,table_5_12
+death2c,Sex,Death,Decedent,Direct,Character,table_6_01 
+death2c,Sex,Death,Decedent,Direct,Character,table_6_03 
+death2c,Sex,Death,Decedent,Direct,Character,table_6_04 
+death2c,Sex,Death,Decedent,Direct,Character,table_6_05 
+death2c,Sex,Death,Decedent,Direct,Character,table_6_06 
+death2c,Sex,Death,Decedent,Direct,Character,table_6_07 
+death2c,Sex,Death,Decedent,Direct,Character,table_6_08 
+death2c,Sex,Death,Decedent,Direct,Character,table_6_09 
+death2c,Sex,Death,Decedent,Direct,Character,table_6_10
+death2c,Sex,Death,Decedent,Direct,Character,table_8_01 
+death2c,Sex,Death,Decedent,Direct,Character,table_8_02 
+death2c,Sex,Death,Decedent,Direct,Character,table_5_02 
+death2c,Sex,Death,Decedent,Direct,Character,table_5_03 
+death2c,Sex,Death,Decedent,Direct,Character,table_5_04 
+death2c,Sex,Death,Decedent,Direct,Character,table_5_05 
+death2c,Sex,Death,Decedent,Direct,Character,table_6_02 
+death2c,Sex,Death,Decedent,Direct,Character,table_6_03 
+death1c,Place of occurrence,Death,Event,Direct,Character,table_5_03 
+death1c,Place of occurrence,Death,Event,Direct,Character,table_5_04 
+death1c,Place of occurrence,Death,Event,Direct,Character,table_5_05 
+death1n,"Type of place of occurrence (hospital, home, etc.)",Death,Event,Additional,Character,table_5_05 
+death2b,Age,Death,Decedent,Derived,Integer,table_3_10
+death2b,Age,Death,Decedent,Derived,Integer,table_3_12
+death2b,Age,Death,Decedent,Derived,Integer,table_5_06 
+death2b,Age,Death,Decedent,Derived,Integer,table_5_07 
+death2b,Age,Death,Decedent,Derived,Integer,table_5_09 
+death2b,Age,Death,Decedent,Derived,Integer,table_5_11
+death2b,Age,Death,Decedent,Derived,Integer,table_5_12
+death2b,Age,Death,Decedent,Derived,Integer,table_6_01 
+death2b,Age,Death,Decedent,Derived,Integer,table_6_05 
+death2b,Age,Death,Decedent,Derived,Integer,table_6_06 
+death2b,Age,Death,Decedent,Derived,Integer,table_6_07 
+death2b,Age,Death,Decedent,Derived,Integer,table_6_08 
+death2b,Age,Death,Decedent,Derived,Integer,table_6_09 
+death2b,Age,Death,Decedent,Derived,Integer,table_6_10
+death2b,Age,Death,Decedent,Derived,Integer,table_8_01 
+death2b,Age,Death,Decedent,Derived,Integer,table_8_02 
+death2b,Age,Death,Decedent,Derived,Integer,table_8_03 
+death2b,Age,Death,Decedent,Derived,Integer,table_8_04 
+death2b,Age,Death,Decedent,Derived,Integer,table_5_02 
+death2b,Age,Death,Decedent,Derived,Integer,table_5_04 
+death2b,Age,Death,Decedent,Derived,Integer,table_5_05 
+death2b,Age,Death,Decedent,Derived,Integer,table_6_02 
+death2b,Age,Death,Decedent,Derived,Integer,table_6_03 
+death2o,Place of usual residence,Death,Decedent,Direct,Character,table_3_07 
+death2o,Place of usual residence,Death,Decedent,Direct,Character,table_3_09 
+death2o,Place of usual residence,Death,Decedent,Direct,Character,table_5_02 
+death2o,Place of usual residence,Death,Decedent,Direct,Character,table_5_03 
+death2o,Place of usual residence,Death,Decedent,Direct,Character,table_5_04 
+death2o,Place of usual residence,Death,Decedent,Direct,Character,table_5_08 
+death2o,Place of usual residence,Death,Decedent,Direct,Character,table_8_02 
+death2o,Place of usual residence,Death,Decedent,Direct,Character,table_8_04 
+death2p,Place of usual residence of the mother (for deaths under 1 year of age),Death,Decedent,Direct,Character,table_3_07 
+death2p,Place of usual residence of the mother (for deaths under 1 year of age),Death,Decedent,Direct,Character,table_3_09 
+death2p,Place of usual residence of the mother (for deaths under 1 year of age),Death,Decedent,Direct,Character,table_5_02 
+death2p,Place of usual residence of the mother (for deaths under 1 year of age),Death,Decedent,Direct,Character,table_5_03 
+death2p,Place of usual residence of the mother (for deaths under 1 year of age),Death,Decedent,Direct,Character,table_5_04 
+death2p,Place of usual residence of the mother (for deaths under 1 year of age),Death,Decedent,Direct,Character,table_5_08 
+death2p,Place of usual residence of the mother (for deaths under 1 year of age),Death,Decedent,Direct,Character,table_8_02 
+death2p,Place of usual residence of the mother (for deaths under 1 year of age),Death,Decedent,Direct,Character,table_8_04 
+death2r,Urban/rural residence,Death,Decedent,Derived,Character,table_5_02 
+death2r,Urban/rural residence,Death,Decedent,Derived,Character,table_5_06 
+death2r,Urban/rural residence,Death,Decedent,Derived,Character,table_5_07 
+death1j,"Death occurring during pregnancy, childbirth and puerperium (for females between 15 and 49 years of age)",Death,Event,Additional,Character,table_5_10
+death1j,"Death occurring during pregnancy, childbirth and puerperium (for females between 15 and 49 years of age)",Death,Event,Additional,Character,table_8_03 
+death1j,"Death occurring during pregnancy, childbirth and puerperium (for females between 15 and 49 years of age)",Death,Event,Additional,Character,table_8_04 
+death1g,Cause of death,Death,Event,Direct,Character,table_6_01 
+death1g,Cause of death,Death,Event,Direct,Character,table_6_02 
+death1g,Cause of death,Death,Event,Direct,Character,table_6_03 
+death1g,Cause of death,Death,Event,Direct,Character,table_6_04 
+death1g,Cause of death,Death,Event,Direct,Character,table_6_05 
+death1g,Cause of death,Death,Event,Direct,Character,table_6_06 
+death1g,Cause of death,Death,Event,Direct,Character,table_6_07 
+death1g,Cause of death,Death,Event,Direct,Character,table_6_08 
+death1g,Cause of death,Death,Event,Direct,Character,table_6_09 
+death1g,Cause of death,Death,Event,Direct,Character,table_6_10
+death1g,Cause of death,Death,Event,Direct,Character,table_6_01 
+death1g,Cause of death,Death,Event,Direct,Character,table_6_02 
+death1g,Cause of death,Death,Event,Direct,Character,table_6_03 
+marriage1a,Date of occurrence,Marriage,Event,Direct,Date,table_7_02 
+marriage1a,Date of occurrence,Marriage,Event,Direct,Date,table_7_03 
+marriage1a,Date of occurrence,Marriage,Event,Direct,Date,table_7_04 
+marriage1a,Date of occurrence,Marriage,Event,Direct,Date,table_7_05 
+marriage1a,Date of occurrence,Marriage,Event,Direct,Date,table_8_05 
+marriage1a,Date of occurrence,Marriage,Event,Direct,Date,table_7_01 
+marriage1a,Date of occurrence,Marriage,Event,Direct,Date,table_7_02 
+marriage1b,Date of registration,Marriage,Event,Direct,Date,table_7_02 
+marriage1b,Date of registration,Marriage,Event,Direct,Date,table_7_03 
+marriage1b,Date of registration,Marriage,Event,Direct,Date,table_7_04 
+marriage1b,Date of registration,Marriage,Event,Direct,Date,table_7_05 
+marriage1b,Date of registration,Marriage,Event,Direct,Date,table_8_05 
+marriage1b,Date of registration,Marriage,Event,Direct,Date,table_7_01 
+marriage1b,Date of registration,Marriage,Event,Direct,Date,table_7_02 
+marriage2b,Age,Marriage,Bride,Derived,Integer,table_7_02 
+marriage2b,Age,Marriage,Bride,Derived,Integer,table_7_03 
+marriage2b,Age,Marriage,Bride,Derived,Integer,table_7_05 
+marriage2b,Age,Marriage,Bride,Derived,Integer,table_8_05 
+marriage2b,Age,Marriage,Bride,Derived,Integer,table_7_02 
+marriage3b,Age,Marriage,Groom,Derived,Integer,table_7_02 
+marriage3b,Age,Marriage,Groom,Derived,Integer,table_7_03 
+marriage3b,Age,Marriage,Groom,Derived,Integer,table_7_04 
+marriage3b,Age,Marriage,Groom,Derived,Integer,table_8_05 
+marriage3b,Age,Marriage,Groom,Derived,Integer,table_7_02 
+marriage3m,Place of usual residence,Marriage,Groom,Direct,Character,table_7_02 
+marriage3m,Place of usual residence,Marriage,Groom,Direct,Character,table_7_03 
+marriage2c,Marital status (previous),Marriage,Bride,Additional,Character,table_7_05 
+marriage3c,Marital status (previous),Marriage,Groom,Additional,Character,table_7_04 
+divorce2b,Age,Divorce,Wife,Derived,Integer,table_7_06 
+divorce2b,Age,Divorce,Wife,Derived,Integer,table_7_08 
+divorce2b,Age,Divorce,Wife,Derived,Integer,table_8_05 
+divorce2b,Age,Divorce,Wife,Derived,Integer,table_7_04 
+divorce2b,Age,Divorce,Wife,Derived,Integer,table_7_05 
+divorce3b,Age,Divorce,Husband,Derived,Integer,table_7_06 
+divorce3b,Age,Divorce,Husband,Derived,Integer,table_7_07 
+divorce3b,Age,Divorce,Husband,Derived,Integer,table_8_05 
+divorce3b,Age,Divorce,Husband,Derived,Integer,table_7_04 
+divorce3b,Age,Divorce,Husband,Derived,Integer,table_7_05 
+divorce1a,Date of occurrence,Divorce,Event,Direct,Date,table_7_06 
+divorce1a,Date of occurrence,Divorce,Event,Direct,Date,table_7_07 
+divorce1a,Date of occurrence,Divorce,Event,Direct,Date,table_7_08 
+divorce1a,Date of occurrence,Divorce,Event,Direct,Date,table_7_09 
+divorce1a,Date of occurrence,Divorce,Event,Direct,Date,table_8_05 
+divorce1a,Date of occurrence,Divorce,Event,Direct,Date,table_7_03 
+divorce1a,Date of occurrence,Divorce,Event,Direct,Date,table_7_04 
+divorce1a,Date of occurrence,Divorce,Event,Direct,Date,table_7_05 
+divorce1a,Date of occurrence,Divorce,Event,Direct,Date,table_7_06 
+divorce1b,Date of registration,Divorce,Event,Direct,Date,table_7_06 
+divorce1b,Date of registration,Divorce,Event,Direct,Date,table_7_07 
+divorce1b,Date of registration,Divorce,Event,Direct,Date,table_7_08 
+divorce1b,Date of registration,Divorce,Event,Direct,Date,table_7_09 
+divorce1b,Date of registration,Divorce,Event,Direct,Date,table_8_05 
+divorce1b,Date of registration,Divorce,Event,Direct,Date,table_7_03 
+divorce1b,Date of registration,Divorce,Event,Direct,Date,table_7_04 
+divorce1b,Date of registration,Divorce,Event,Direct,Date,table_7_05 
+divorce1b,Date of registration,Divorce,Event,Direct,Date,table_7_06 
+divorce2g,Duration of marriage,Divorce,Wife,Derived,Integer,table_7_08 
+divorce2g,Duration of marriage,Divorce,Wife,Derived,Integer,table_7_09 
+divorce2g,Duration of marriage,Divorce,Wife,Derived,Integer,table_7_06 
+divorce3g,Duration of marriage,Divorce,Husband,Derived,Integer,table_7_07 
+divorce3g,Duration of marriage,Divorce,Husband,Derived,Integer,table_7_09 
+divorce3g,Duration of marriage,Divorce,Husband,Derived,Integer,table_7_06 
+divorce2d,Number of dependent children of divorced persons,Divorce,Wife,Additional,Integer,table_7_09 

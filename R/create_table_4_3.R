@@ -1,45 +1,38 @@
-#' Create Table 4.3
+#' Creates Table 4.3
 #'
-#' @description
-#' Live births by place of occurrence and place of usual residence of mother, year
+#'Table 4.3 Live births by place of occurrence and place of usual residence of mother
 #'
-#' Variables required:
-#' \itemize{
-#'   \item Date of occurrence (birth1a)
-#'   \item Place of occurrence (birth1c)
-#'   \item Place of usual residence - Mother (birth3l)
-#' }
-#'
-#' @param data Birth registration data
-#' @param date_var Date of occurrence variable
-#' @param data_year Chosen year
-#' @param tablename Name for csv output use _ instead of . for names
+#' @param data data frame being used
+#' @param date_var occurrence data being used e.g. dobyr, dodyr etc
+#' @param data_year year the data is for
+#' @param tablename name for csv output use _ instead of . for names
 #' @param output_path The path to export the generated table
 #'
-#' @return Data frame with tabulated results (if an output_path is given, it will export a .csv)
+#' @return data frame with tablutated results
 #' @export
 #'
 #' @import dplyr
 #' @import tidyr
-#' @import lubridate
 #' @import janitor
 #'
-#' @note
-#' The Vital Statistics \href{https://www.vitalstrategies.org/resources/production-of-a-vital-statistics-report/}{report resource kit}
-#' includes guidance and templates to help complete your CRVS report.
-#'
-#' @examples table4_3 <- create_t4.3(sample_data1, date_var = birth1a, data_year = 2021, tablename = "Table_4_3")
+#' @examples t4.3 <- create_t4.3(bth_data, dobyr, 2022)
 
-create_t4.3 <- function(data, date_var, data_year = 2022, tablename = "Table_4_3", output_path = NULL){
+create_t4.3 <- function(data, date_var = "dobyr", data_year = NA, tablename = "Table_4_3", output_path = NULL){
+
+  # if data_year is not provided, take the latest year in the data
+  if (is.na(data_year)){
+    data_year = data %>% pull(!!sym(date_var)) %>% max(na.rm = TRUE)
+  }
+
   output <- data |>
-    na.omit(sbind) |>
-    mutate(birth1a = year(birth1a)) |>
-    filter({{date_var}} == data_year) |>
+    filter(is.na(birth1j) & !!sym(date_var) == data_year) |>
     group_by(birth1c, birth3l) |>
+    mutate(match = if_else(birth1c == birth3l, "Same as place of occurrence", "Other location")) |>
+    group_by(birth1c, match) |>
     summarise(total = n()) |>
-    pivot_wider(names_from = birth1c, values_from = total, values_fill = 0) |>
+    pivot_wider(names_from = match, values_from = total, values_fill = 0) |>
     adorn_totals(c("col", "row"))
-  
+
   if (is.null(output_path)){
     return(output)
   } else {

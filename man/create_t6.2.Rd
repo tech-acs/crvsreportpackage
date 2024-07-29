@@ -4,19 +4,31 @@
 \alias{create_t6.2}
 \title{Create Table 6.2}
 \usage{
-create_t6.2(data, date_var)
+create_t6.2(
+  death_data,
+  cause,
+  date_var = "dodyr",
+  tablename = "Table_6_1",
+  output_path = NULL
+)
 }
 \arguments{
-\item{data}{data frame being used}
+\item{cause}{Dictionary with the causes of deaths}
 
-\item{data_year}{year of data: dodyr or doryr}
+\item{date_var}{year of data: dodyr or doryr}
+
+\item{tablename}{name of the table being saved as a csv file}
+
+\item{output_path}{The path to export the generated table}
+
+\item{data}{data frame being used}
 }
 \value{
 Returns data frame with tabulated results
 }
 \description{
-Create Table 6.2
+Table 6.2 Top 10 causes of death (all ages, both sexes)
 }
 \examples{
-t6.2 <- create_t6.2(dth_data, dodyr)
+t6.2 <- create_t6.2(dth_data, cause)
 }

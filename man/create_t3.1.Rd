@@ -2,22 +2,34 @@
 % Please edit documentation in R/create_table_3_1.R
 \name{create_t3.1}
 \alias{create_t3.1}
-\title{Create Table 3.1 and output csv file}
+\title{Create Table 3.1}
 \usage{
-create_t3.1(bth_data, dth_data, bth_yr_var, dth_yr_var)
+create_t3.1(
+  bth_data,
+  dth_data,
+  bth_yr_var,
+  dth_yr_var,
+  tablename = "Table_3_1"
+)
 }
 \arguments{
-\item{births_data}{name of births data frame}
+\item{bth_data}{name of births data frame}
 
-\item{deaths_data}{name of deaths data frame}
+\item{dth_data}{name of deaths data frame}
+
+\item{bth_yr_var}{name of year variable (Births)}
+
+\item{dth_yr_var}{name of year variable (Deaths)}
+
+\item{tablename}{name of the table being saved as a csv file}
 }
 \value{
-Data frame with tabulated result
+Data frame with tabulated results (if an output_path is given, it will export a .csv)
 }
 \description{
-Create Table 3.1 and output csv file
+Table 3.1 Number of vital events by registration timeliness, year
 }
 \examples{
-t3.1 <- create_t3.1(bth_data = bth_data, dth_data = dth_data, bth_yr_var = dobyr, dth_yr_var = dodyr)
+t3.1 <- create_t3.1(bth_data = bth_data, dth_data = dth_data, bth_yr_var = dobyr, dth_yr_var = dodyr, tablename = "Table_3_1")
 
 }

@@ -4,7 +4,7 @@
 #'
 #'@details Given the config defined arguments for a function, it will look for the data fields and convert them to create the function call.
 #'
-#'@param args A list of variables that comes from the config file. 
+#'@param args A list of variables that comes from the config file.
 #'
 #'@return A list of arguments that can be passed into the functions.
 #'
@@ -17,9 +17,17 @@ convert_config_args <- function(args) {
   if (!is.null(args$data) && is.character(args$data)) {
     args$data <- get(args$data, envir = .GlobalEnv)
   }
-  # Convert date_var to the actual column if it's a string representing a column name
-  if (!is.null(args$date_var) && is.character(args$date_var)) {
-    args$date_var <- sym(args$date_var)
+  # Convert est_data to the actual data frame if it's a string representing a variable name
+  if (!is.null(args$est_data) && is.character(args$est_data)) {
+    args$est_data <- get(args$est_data, envir = .GlobalEnv)
+  }
+  # Convert cause to the actual data frame if it's a string representing a variable name
+  if (!is.null(args$cause) && is.character(args$cause)) {
+    args$cause <- get(args$cause, envir = .GlobalEnv)
+  }
+  # Convert pops to the actual data frame if it's a string representing a variable name
+  if (!is.null(args$pops) && is.character(args$pops)) {
+    args$pops <- get(args$pops, envir = .GlobalEnv)
   }
   # Convert output path to actual variable name
   if (!is.null(args$output_path) && is.character(args$output_path)) {

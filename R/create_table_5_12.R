@@ -16,7 +16,7 @@
 #' 
 create_t5.12 <- function(data, date_var, data_year = 2022, tablename = NA){
 output<- data |>
-  filter(!is.na(sbind) & {{date_var}} == 2022) |>
+  filter(!is.na(birth1j) & {{date_var}} == 2022) |>
   group_by(gest_grp, bthwgt_grp) |>
   summarise(total = n()) |>
   pivot_wider(names_from = bthwgt_grp, values_from = total, values_fill = 0)

@@ -6,14 +6,17 @@
 \usage{
 create_t4.2(
   data,
-  date_var,
-  data_year = 2022,
+  est_data,
+  date_var = "dobyr",
+  data_year = NA,
   tablename = "Table_4_2",
   output_path = NULL
 )
 }
 \arguments{
 \item{data}{data frame being used}
+
+\item{est_data}{data frame of estimated data being used}
 
 \item{date_var}{name of date variable}
 
@@ -27,16 +30,9 @@ create_t4.2(
 data frame of tabulated counts
 }
 \description{
-Live births by place of occurrence and sex of newborn, year
-
-Variables required:
-\itemize{
-  \item Date of occurrence (birth1a)
-  \item Place of occurrence (birth1c)
-  \item Type of place of occurrence (hospital, home, etc.) (birth1i)
-  \item Sex (birth2a)
-}
+Table 4.2 Live births by place of occurrence and birth2a of newborn
 }
 \examples{
-t4.2 <- create_t4.2(birth_data, birth1a, data_year = 2022)
+t4.2 <- create_t4.2(data = bth_data, est_data = bth_est, date_var = dobyr,
+                             data_year = 2022, tablename = "Table_4_2")
 }

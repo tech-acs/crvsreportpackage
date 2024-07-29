@@ -38,9 +38,21 @@ jobs:
           remotes::install_local()
         shell: Rscript {0}
 
+      - name: Print package contents
+        run: |
+          library(crvsreportpackage)
+          ls("package:crvsreportpackage")
+        shell: Rscript {0}
+
+      - name: List installed packages
+        run: |
+          installed.packages()
+        shell: Rscript {0}
+
       - name: Run tests
         run: |
           install.packages('testthat')
+          library(crvsreportpackage)
           testthat::test_dir('tests/testthat')
         shell: Rscript {0}
 

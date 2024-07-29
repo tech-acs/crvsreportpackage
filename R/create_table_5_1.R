@@ -48,7 +48,6 @@ create_table_5.1 <- function(death_data = dth_data, death_year_var = dodyr, deat
     select(-sex) |>
     arrange(desc(Indicator))
 
-
   #### Calculate estimated deaths
   dthest <- {{death_est_data}} |>
     select(year, male, female, total) |>
@@ -58,8 +57,6 @@ create_table_5.1 <- function(death_data = dth_data, death_year_var = dodyr, deat
     pivot_longer(cols = c(male, female, total), names_to = "Indicator", values_to =  "counts")
 
   dth <- merge(dth, dthest, by.x = c(dth_by_var_name, "sex"), by.y = c("year", "Indicator"))
-
-
 
   #### calculate completeness
   complete <- dth |>
@@ -76,9 +73,9 @@ create_table_5.1 <- function(death_data = dth_data, death_year_var = dodyr, deat
     select(starts_with("popu"), sex) |>
     pivot_longer(cols = starts_with("popu"), names_to = "year", values_to = "count" ) |>
     mutate(year = gsub("population_", "", year)) |>
-    group_by(year, sex) |>
+    group_by(year, birth2a) |>
     summarise(total_pop = sum(count)) |>
-    arrange(sex)
+    arrange(birth2a)
 
   pop_for_2 <- pop_for_dth |>
     mutate(sex = "total") |>

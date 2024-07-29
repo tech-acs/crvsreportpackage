@@ -37,7 +37,8 @@ reactable(variables,
             variable_name = colDef(name = "Name", filterable = FALSE),
             event = colDef(name = "Event"),
             characteristic = colDef(name = "Characteristic"),
-            data_type = colDef(name = "Type", filterable = FALSE)
+            source = colDef(name = "Source", filterable = FALSE),
+            type = colDef(name = "Type", filterable = FALSE)
             ),
           defaultPageSize = 5
           ) -> table
@@ -112,6 +113,7 @@ t4.7 <- create_table_4.7(bth_data,
 </br>
 
 ## Further resources
+
 - United Nations. (2014). *Principles and recommendations for a vital statistics system*. Revision 3. Department of Economic and
 Social Affairs, Statistics Division Statistical Papers, Series M No. 19/Rev.3, New York. [https://crvs.unescap.org/resource/principles-and-recommendations-vital-statistics-system](https://crvs.unescap.org/resource/principles-and-recommendations-vital-statistics-system).
 - Vital Strategies. (2024). *Production of a Vital Statistics Report*. [https://www.vitalstrategies.org/resources/production-of-a-vital-statistics-report/](https://www.vitalstrategies.org/resources/production-of-a-vital-statistics-report/)

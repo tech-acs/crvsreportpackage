@@ -1,46 +1,48 @@
-﻿variable_id,variable_name,event,characteristic,data_type
-birth1a,Date of occurrence,Birth,NA,Direct
-birth1b,Date of registration,Birth,NA,Direct
-birth1c,Place of occurrence,Birth,NA,Direct
-birth1g,"Type of birth (i.e., single, twin, triplet, quadruplet or higher multiple delivery)",Birth,NA,Direct
-birth1h,Attendant at birth,Birth,NA,Direct
-birth1i,"Type of place of occurrence (hospital, home, etc.)",Birth,NA,Additional
-birth2a,Sex,Birth,Newborn,Direct
-birth3a,Date of birth,Birth,Mother,Direct
-birth3b,Age,Birth,Mother,Derived
-birth3c,Marital status,Birth,Mother,Direct
-birth3l,Place of usual residence,Birth,Mother,Direct
-birth3n,Urban/rural residence,Birth,Mother,Derived
-death1a,Date of occurrence,Death,NA,Direct
-death1b,Date of registration,Death,NA,Direct
-death1c,Place of occurrence,Death,NA,Direct
-death1g,Cause of death,Death,NA,Direct
-death1j,"Death occurring during pregnancy, childbirth and puerperium (for females between 15 and 49 years of age)",Death,NA,Additional
-death1n,"Type of place of occurrence (hospital, home, etc.)",Death,NA,Additional
-death2a,Date of birth,Death,NA,Direct
-death2b,Age,Death,Decedent,Derived
-death2c,Sex,Death,Decedent,Direct
-death2o,Place of usual residence,Death,Decedent,Direct
-death2p,Place of usual residence of the mother (for deaths under 1 year of age),Death,Decedent,Direct
-death2r,Urban/rural residence,Death,Decedent,Derived
-marriage1a,Date of occurrence,Marriage,NA,Direct
-marriage1b,Date of registration,Marriage,NA,Direct
-marriage2a,Date of birth,Marriage,Bride,Direct
-marriage2b,Age,Marriage,Bride,Derived
-marriage2c,Marital status (previous),Marriage,Bride,Additional
-marriage3a,Date of birth,Marriage,Groom,Direct
-marriage3b,Age,Marriage,Groom,Derived
-marriage3c,Marital status (previous),Marriage,Groom,Additional
-marriage3m,Place of usual residence,Marriage,Groom,Direct
-divorce1a,Date of occurrence,Divorce,NA,Direct
-divorce1b,Date of registration,Divorce,NA,Direct
-divorce2a,Date of birth,Divorce,Wife,Direct
-divorce2b,Age,Divorce,Wife,Derived
-divorce2d,Number of dependent children of divorced persons,Divorce,Wife,Additional
-divorce2f,Date of marriage,Divorce,Wife,Direct
-divorce2g,Duration of marriage,Divorce,Wife,Derived
-divorce3a,Date of birth,Divorce,Husband,Direct
-divorce3b,Age,Divorce,Husband,Derived
-divorce3d,Number of dependent children of divorced persons,Divorce,Husband,Additional
-divorce3f,Date of marriage,Divorce,Husband,Direct
-divorce3g,Duration of marriage,Divorce,Husband,Derived
+﻿variable_id,variable_name,event,characteristic,source,type
+birth1a,Date of occurrence,Birth,Event,Direct,Date
+birth1b,Date of registration,Birth,Event,Direct,Date
+birth1c,Place of occurrence,Birth,Event,Direct,Character
+birth1g,"Type of birth (i.e., single, twin, triplet, quadruplet or higher multiple delivery)",Birth,Event,Direct,Character
+birth1h,Attendant at birth,Birth,Event,Direct,Character
+birth1i,"Type of place of occurrence (hospital, home, etc.)",Birth,Event,Additional,Character
+birth1j,"Still Birth Indicator",Birth,Event,Direct,Character
+birth2a,Sex,Birth,Newborn,Direct,Character
+birth3a,Date of birth,Birth,Mother,Direct,Date
+birth3b,Age,Birth,Mother,Derived,Integer
+birth3c,Marital status,Birth,Mother,Direct,Character
+birth3l,Place of usual residence,Birth,Mother,Direct,Character
+birth3n,Urban/rural residence,Birth,Mother,Derived,Character
+death1a,Date of occurrence,Death,Event,Direct,Date
+death1b,Date of registration,Death,Event,Direct,Date
+death1c,Place of occurrence,Death,Event,Direct,Character
+death1g,Cause of death,Death,Event,Direct,Character
+death1j,"Death occurring during pregnancy, childbirth and puerperium (for females between 15 and 49 years of age)",Death,Event,Additional,Character
+death1n,"Type of place of occurrence (hospital, home, etc.)",Death,Event,Additional,Character
+death2a,Date of birth,Death,Event,Direct,Date
+death2b,Age,Death,Decedent,Derived,Integer
+death2c,Sex,Death,Decedent,Direct,Character
+death2o,Place of usual residence,Death,Decedent,Direct,Character
+death2p,Place of usual residence of the mother (for deaths under 1 year of age),Death,Decedent,Direct,Character
+death2r,Urban/rural residence,Death,Decedent,Derived,Character
+marriage1a,Date of occurrence,Marriage,Event,Direct,Date
+marriage1b,Date of registration,Marriage,Event,Direct,Date
+marriage2a,Date of birth,Marriage,Bride,Direct,Date
+marriage2b,Age,Marriage,Bride,Derived,Integer
+marriage2c,Marital status (previous),Marriage,Bride,Additional,Character
+marriage3a,Date of birth,Marriage,Groom,Direct,Date
+marriage3b,Age,Marriage,Groom,Derived,Integer
+marriage3c,Marital status (previous),Marriage,Groom,Additional,Character
+marriage3m,Place of usual residence,Marriage,Groom,Direct,Character
+marriage3n,Urban/rural residence,Marriage,Groom,Direct,Character
+divorce1a,Date of occurrence,Divorce,Event,Direct,Date
+divorce1b,Date of registration,Divorce,Event,Direct,Date
+divorce2a,Date of birth,Divorce,Wife,Direct,Date
+divorce2b,Age,Divorce,Wife,Derived,Integer
+divorce2d,Number of dependent children of divorced persons,Divorce,Wife,Additional,Integer
+divorce2f,Date of marriage,Divorce,Wife,Direct,Date
+divorce2g,Duration of marriage,Divorce,Wife,Derived,Integer
+divorce3a,Date of birth,Divorce,Husband,Direct,Date
+divorce3b,Age,Divorce,Husband,Derived,Integer
+divorce3d,Number of dependent children of divorced persons,Divorce,Husband,Additional,Integer
+divorce3f,Date of marriage,Divorce,Husband,Direct,Date
+divorce3g,Duration of marriage,Divorce,Husband,Derived,Integer

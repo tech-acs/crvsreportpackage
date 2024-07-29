@@ -1,12 +1,15 @@
 # Load required packages
-install.packages("desc")
 library(desc)
 library(renv)
 
 # Function to update DESCRIPTION file
 update_description <- function() {
   # Load current DESCRIPTION file
-  desc <- description$new("DESCRIPTION")
+  desc_file <- "DESCRIPTION"
+  if (!file.exists(desc_file)) {
+    stop("DESCRIPTION file does not exist in the current directory.")
+  }
+  desc <- description$new(desc_file)
 
   # Get dependencies from renv
   deps <- renv::dependencies()
@@ -26,7 +29,7 @@ update_description <- function() {
   }
 
   # Write back to DESCRIPTION
-  desc$write(file = "DESCRIPTION")
+  desc$write(file = desc_file)
 }
 
 # Run the function to update DESCRIPTION

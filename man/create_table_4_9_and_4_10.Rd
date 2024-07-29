@@ -7,9 +7,11 @@
 create_table_4_9_and_4_10(
   data,
   est_data,
-  data_year = 2022,
-  ruindicator = "urban",
-  tablename = NA
+  pops,
+  data_year = NA,
+  rural_urban = "urban",
+  tablename = "Table_4_9",
+  output_path = NULL
 )
 }
 \arguments{
@@ -17,21 +19,27 @@ create_table_4_9_and_4_10(
 
 \item{est_data}{data frame for estimate data}
 
+\item{pops}{population estimates}
+
 \item{data_year}{year of data}
 
-\item{ruindicator}{whether table is for urban or rural data}
+\item{rural_urban}{whether table is for urban or rural data}
 
 \item{tablename}{name for csv output use _ instead of . for names}
+
+\item{output_path}{The path to export the generated table}
 }
 \value{
 data frame with tabulated result
 }
 \description{
-Creates Tables 4.9 and 4.10
+Table 4.9 Age-specific fertility rates by usual residence of mother, urban areas
+
+Table 4.10 Age-specific fertility rates by usual residence of mother, rural areas
 }
 \examples{
 t4.9 <- create_table_4_9_and_4_10(data = bth_data, est_data = bth_est, data_year = 2022,
-                                 ruindicator = "urban", tablename = "Table_4_9")
+                                 rural_urban = "urban", tablename = "Table_4_9")
 t4.10 <- create_table_4_9_and_4_10(data = bth_data, est_data = bth_est, data_year = 2022,
-                                 ruindicator = "rural", tablename = "Table_4_10")
+                                 rural_urban = "rural", tablename = "Table_4_10")
 }
