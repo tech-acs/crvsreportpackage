@@ -9,7 +9,7 @@ Table 7.3 Marriages by place of usual residence of groom and age of bride and gr
 
     <a class="navbar-brand me-2" href="../index.html">crvsreportpackage</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.10</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -56,7 +56,7 @@ Table 7.3 Marriages by place of usual residence of groom and age of bride and gr
     <div class="sourceCode"><pre class="sourceCode r"><code><span><span class="fu">create_t7.2_and_7.3</span><span class="op">(</span></span>
 <span>  <span class="va">data</span>,</span>
 <span>  data_year <span class="op">=</span> <span class="cn">NA</span>,</span>
-<span>  ruindicator <span class="op">=</span> <span class="st">"urban"</span>,</span>
+<span>  rural_urban <span class="op">=</span> <span class="st">"urban"</span>,</span>
 <span>  tablename <span class="op">=</span> <span class="cn">NA</span></span>
 <span><span class="op">)</span></span></code></pre></div>
     </div>
@@ -73,7 +73,7 @@ Table 7.3 Marriages by place of usual residence of groom and age of bride and gr
 <dd><p>year the data is for</p></dd>
 
 
-<dt id="arg-ruindicator">ruindicator<a class="anchor" aria-label="anchor" href="#arg-ruindicator"></a></dt>
+<dt id="arg-rural-urban">rural_urban<a class="anchor" aria-label="anchor" href="#arg-rural-urban"></a></dt>
 <dd><p>whether the data is for urban or rural</p></dd>
 
 
@@ -88,9 +88,9 @@ Table 7.3 Marriages by place of usual residence of groom and age of bride and gr
 
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
-    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">t7.2</span> <span class="op">&lt;-</span> <span class="fu">create_t7.2_and_7.3</span><span class="op">(</span><span class="va">marr_data</span>, data_year <span class="op">=</span> <span class="fl">2020</span>, ruindicator <span class="op">=</span> <span class="st">"urban"</span>, tablename <span class="op">=</span> <span class="st">"Table_7_1"</span><span class="op">)</span></span></span>
+    <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">t7.2</span> <span class="op">&lt;-</span> <span class="fu">create_t7.2_and_7.3</span><span class="op">(</span><span class="va">marr_data</span>, data_year <span class="op">=</span> <span class="fl">2020</span>, rural_urban <span class="op">=</span> <span class="st">"urban"</span>, tablename <span class="op">=</span> <span class="st">"Table_7_1"</span><span class="op">)</span></span></span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'marr_data' not found</span>
-<span class="r-in"><span><span class="va">t7.3</span> <span class="op">&lt;-</span> <span class="fu">create_t7.2_and_7.3</span><span class="op">(</span><span class="va">marr_data</span>, data_year <span class="op">=</span> <span class="fl">2020</span>, ruindicator <span class="op">=</span> <span class="st">"rural"</span>, tablename <span class="op">=</span> <span class="st">"Table_7_2"</span><span class="op">)</span></span></span>
+<span class="r-in"><span><span class="va">t7.3</span> <span class="op">&lt;-</span> <span class="fu">create_t7.2_and_7.3</span><span class="op">(</span><span class="va">marr_data</span>, data_year <span class="op">=</span> <span class="fl">2020</span>, rural_urban <span class="op">=</span> <span class="st">"rural"</span>, tablename <span class="op">=</span> <span class="st">"Table_7_2"</span><span class="op">)</span></span></span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'marr_data' not found</span>
 <span class="r-in"><span></span></span>
 </code></pre></div>

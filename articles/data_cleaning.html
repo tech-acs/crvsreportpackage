@@ -20,7 +20,7 @@
 
     <a class="navbar-brand me-2" href="../index.html">crvsreportpackage</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.10</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -93,21 +93,21 @@ with.</p>
 <span></span>
 <span><span class="co"># print the first 10 rows</span></span>
 <span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/slice.html" class="external-link">slice</a></span><span class="op">(</span><span class="va">bth_data</span>, <span class="fl">1</span><span class="op">:</span><span class="fl">10</span><span class="op">)</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 10 × 12</span></span></span>
-<span><span class="co">#&gt;    birth1a    birth1b    birth1c birth1g      birth1h birth1i birth2a birth3a   </span></span>
-<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>        <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>    </span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> 2006-05-08 2021-01-13 RegionD Twin         Doctor  Hospit… Male    1979-01-19</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> 2013-06-21 2006-11-16 RegionC Quadruplet … Midwife Hospit… Male    1991-06-02</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> 2012-07-23 2018-07-31 RegionD Triplet      Nurse   Clinic  Female  1973-06-07</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> 2011-07-05 2005-11-06 RegionA Single       Other   Hospit… Male    1992-11-13</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> 2013-05-11 2001-02-21 RegionC Quadruplet … Nurse   Other   Male    1993-04-26</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> 2007-05-04 2014-09-05 RegionC Single       Nurse   Clinic  Male    1978-06-27</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> 2011-08-09 2009-01-31 RegionD Quadruplet … Midwife Clinic  Female  1979-03-09</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 2006-12-30 2007-01-27 RegionC Quadruplet … Midwife Clinic  Female  1980-01-31</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 2007-01-30 2019-01-18 RegionD Twin         Doctor  Other   Male    1992-11-11</span></span>
-<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 2020-06-22 2001-12-18 RegionB Single       Midwife Other   Male    1979-07-04</span></span>
-<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 4 more variables: birth3b &lt;dbl&gt;, birth3c &lt;chr&gt;, birth3l &lt;chr&gt;,</span></span></span>
-<span><span class="co">#&gt; <span style="color: #949494;">#   birth3n &lt;chr&gt;</span></span></span></code></pre></div>
+<span><span class="co">#&gt; <span style="color: #949494;"># A tibble: 10 × 13</span></span></span>
+<span><span class="co">#&gt;    birth1a    birth1b    birth1c birth1g         birth1h birth1i birth1j birth2a</span></span>
+<span><span class="co">#&gt;    <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;date&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>           <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>   <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>     <span style="color: #949494; font-style: italic;">&lt;dbl&gt;</span> <span style="color: #949494; font-style: italic;">&lt;chr&gt;</span>  </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 1</span> 2018-06-10 2021-02-11 RegionA Twin            Midwife Other         1 male   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 2</span> 2019-07-12 2021-03-19 RegionB Single          Other   Home         <span style="color: #BB0000;">NA</span> male   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 3</span> 2022-06-16 2020-02-18 RegionD Triplet         Doctor  Clinic       <span style="color: #BB0000;">NA</span> male   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 4</span> 2022-01-19 2022-05-14 RegionD Twin            Midwife Clinic        1 not st…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 5</span> 2021-05-04 2018-04-09 RegionB Quadruplet or … Midwife Clinic       <span style="color: #BB0000;">NA</span> male   </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 6</span> 2018-09-02 2019-02-13 RegionC Twin            Other   Clinic        1 not st…</span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 7</span> 2021-10-19 2022-12-10 RegionC Triplet         Midwife Other        <span style="color: #BB0000;">NA</span> female </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 8</span> 2017-12-23 2018-12-21 RegionA Triplet         Nurse   Home          1 female </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;"> 9</span> 2017-04-18 2019-06-04 RegionA Twin            Doctor  Clinic       <span style="color: #BB0000;">NA</span> female </span></span>
+<span><span class="co">#&gt; <span style="color: #BCBCBC;">10</span> 2020-09-07 2020-11-04 RegionA Single          Other   Home          1 male   </span></span>
+<span><span class="co">#&gt; <span style="color: #949494;"># ℹ 5 more variables: birth3a &lt;date&gt;, birth3b &lt;dbl&gt;, birth3c &lt;chr&gt;,</span></span></span>
+<span><span class="co">#&gt; <span style="color: #949494;">#   birth3l &lt;chr&gt;, birth3n &lt;chr&gt;</span></span></span></code></pre></div>
 <div class="section level2">
 <h2 id="factors">Factors<a class="anchor" aria-label="anchor" href="#factors"></a>
 </h2>
@@ -119,29 +119,29 @@ variables in your dataset run:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html" class="external-link">map</a></span><span class="op">(</span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/select_all.html" class="external-link">select_if</a></span><span class="op">(</span><span class="va">bth_data</span>, <span class="va">is.character</span><span class="op">)</span>, <span class="va">unique</span><span class="op">)</span></span>
 <span><span class="co">#&gt; $birth1c</span></span>
-<span><span class="co">#&gt; [1] "RegionD" "RegionC" "RegionA" "RegionB"</span></span>
+<span><span class="co">#&gt; [1] "RegionA" "RegionB" "RegionD" "RegionC"</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $birth1g</span></span>
-<span><span class="co">#&gt; [1] "Twin"                 "Quadruplet or higher" "Triplet"             </span></span>
-<span><span class="co">#&gt; [4] "Single"              </span></span>
+<span><span class="co">#&gt; [1] "Twin"                 "Single"               "Triplet"             </span></span>
+<span><span class="co">#&gt; [4] "Quadruplet or higher"</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $birth1h</span></span>
-<span><span class="co">#&gt; [1] "Doctor"  "Midwife" "Nurse"   "Other"  </span></span>
+<span><span class="co">#&gt; [1] "Midwife" "Other"   "Doctor"  "Nurse"  </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $birth1i</span></span>
-<span><span class="co">#&gt; [1] "Hospital" "Clinic"   "Other"    "Home"    </span></span>
+<span><span class="co">#&gt; [1] "Other"    "Home"     "Clinic"   "Hospital"</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $birth2a</span></span>
-<span><span class="co">#&gt; [1] "Male"   "Female"</span></span>
+<span><span class="co">#&gt; [1] "male"       "not stated" "female"    </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $birth3c</span></span>
-<span><span class="co">#&gt; [1] "Single"   "Married"  "Widowed"  "Divorced"</span></span>
+<span><span class="co">#&gt; [1] "Married"  "Divorced" "Single"   "Widowed" </span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $birth3l</span></span>
-<span><span class="co">#&gt; [1] "RegionD" "RegionA" "RegionC" "RegionB"</span></span>
+<span><span class="co">#&gt; [1] "RegionC" "RegionD" "RegionA" "RegionB"</span></span>
 <span><span class="co">#&gt; </span></span>
 <span><span class="co">#&gt; $birth3n</span></span>
-<span><span class="co">#&gt; [1] "Rural" "Urban"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "Urban" "Rural"</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="convert-character-variable-to-a-factor">Convert character variable to a factor<a class="anchor" aria-label="anchor" href="#convert-character-variable-to-a-factor"></a>
@@ -169,8 +169,8 @@ function allows you to customise the order of levels.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># check the levels of the factor</span></span>
 <span><span class="va">bth_data</span><span class="op">$</span><span class="va">birth1g</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/base/levels.html" class="external-link">levels</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "Twin"                 "Quadruplet or higher" "Triplet"             </span></span>
-<span><span class="co">#&gt; [4] "Single"</span></span>
+<span><span class="co">#&gt; [1] "Twin"                 "Single"               "Triplet"             </span></span>
+<span><span class="co">#&gt; [4] "Quadruplet or higher"</span></span>
 <span><span class="co"># manually change the order of levels</span></span>
 <span><span class="va">bth_data</span><span class="op">$</span><span class="va">birth1g</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://forcats.tidyverse.org/reference/fct_relevel.html" class="external-link">fct_relevel</a></span><span class="op">(</span><span class="st">"Single"</span>, <span class="st">"Twin"</span>, <span class="st">"Triplet"</span>, <span class="st">"Quadruplet or higher"</span><span class="op">)</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/base/levels.html" class="external-link">levels</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "Single"               "Twin"                 "Triplet"             </span></span>
@@ -184,9 +184,9 @@ function enables you to change factor levels by hand.</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">bth_data</span><span class="op">$</span><span class="va">birth3l</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://forcats.tidyverse.org/reference/as_factor.html" class="external-link">as_factor</a></span><span class="op">(</span><span class="va">bth_data</span><span class="op">$</span><span class="va">birth3l</span><span class="op">)</span></span>
 <span><span class="va">bth_data</span><span class="op">$</span><span class="va">birth3l</span> <span class="op">|&gt;</span>  <span class="fu"><a href="https://rdrr.io/r/base/levels.html" class="external-link">levels</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "RegionD" "RegionA" "RegionC" "RegionB"</span></span>
+<span><span class="co">#&gt; [1] "RegionC" "RegionD" "RegionA" "RegionB"</span></span>
 <span><span class="va">bth_data</span><span class="op">$</span><span class="va">birth3l</span> <span class="op">|&gt;</span>  <span class="fu"><a href="https://forcats.tidyverse.org/reference/fct_recode.html" class="external-link">fct_recode</a></span><span class="op">(</span><span class="st">"Lagos"</span> <span class="op">=</span> <span class="st">"RegionA"</span>, <span class="st">"Kano"</span> <span class="op">=</span> <span class="st">"RegionB"</span><span class="op">)</span> <span class="op"><a href="https://magrittr.tidyverse.org/reference/pipe.html" class="external-link">%&gt;%</a></span> <span class="fu"><a href="https://rdrr.io/r/base/levels.html" class="external-link">levels</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; [1] "RegionD" "Lagos"   "RegionC" "Kano"</span></span></code></pre></div>
+<span><span class="co">#&gt; [1] "RegionC" "RegionD" "Lagos"   "Kano"</span></span></code></pre></div>
 </div>
 </div>
 <div class="section level2">
@@ -221,10 +221,10 @@ data.</p>
 </h3>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">bth_data</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html" class="external-link">map_dbl</a></span><span class="op">(</span><span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">.</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
-<span><span class="co">#&gt; birth1a birth1b birth1c birth1g birth1h birth1i birth2a birth3a birth3b birth3c </span></span>
-<span><span class="co">#&gt;       0       0       0       0       0       0       0       0       0       0 </span></span>
-<span><span class="co">#&gt; birth3l birth3n </span></span>
-<span><span class="co">#&gt;       0       0</span></span></code></pre></div>
+<span><span class="co">#&gt; birth1a birth1b birth1c birth1g birth1h birth1i birth1j birth2a birth3a birth3b </span></span>
+<span><span class="co">#&gt;       0       0       0       0       0       0      53       0       0       0 </span></span>
+<span><span class="co">#&gt; birth3c birth3l birth3n </span></span>
+<span><span class="co">#&gt;       0       0       0</span></span></code></pre></div>
 </div>
 <div class="section level3">
 <h3 id="convert-selected-string-in-single-column-to-na">Convert selected string in single column to NA<a class="anchor" aria-label="anchor" href="#convert-selected-string-in-single-column-to-na"></a>

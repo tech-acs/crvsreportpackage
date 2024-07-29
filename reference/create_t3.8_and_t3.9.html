@@ -9,7 +9,7 @@ Table 3.9 Adjustment of deaths by place of usual residence and sex of decedent">
 
     <a class="navbar-brand me-2" href="../index.html">crvsreportpackage</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.10</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -104,11 +104,11 @@ Table 3.9 Adjustment of deaths by place of usual residence and sex of decedent">
     <div class="section level2">
     <h2 id="ref-examples">Examples<a class="anchor" aria-label="anchor" href="#ref-examples"></a></h2>
     <div class="sourceCode"><pre class="sourceCode r"><code><span class="r-in"><span><span class="va">t3.8</span> <span class="op">&lt;-</span> <span class="fu">create_t3.8_and_t3.9</span><span class="op">(</span>data <span class="op">=</span> <span class="va">bth_data</span>, est_data <span class="op">=</span> <span class="va">bth_est</span>,</span></span>
-<span class="r-in"><span>date_var <span class="op">=</span> <span class="va">dobyr</span>, data_year <span class="op">=</span> <span class="fl">2022</span>, by_var <span class="op">=</span> <span class="va">rgn</span>,</span></span>
+<span class="r-in"><span>date_var <span class="op">=</span> <span class="va">dobyr</span>, data_year <span class="op">=</span> <span class="fl">2022</span>, by_var <span class="op">=</span> <span class="va">birth1c</span>,</span></span>
 <span class="r-in"><span>topic <span class="op">=</span> <span class="st">"births"</span>, tablename <span class="op">=</span> <span class="st">"Table_3_8"</span><span class="op">)</span></span></span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'bth_data' not found</span>
 <span class="r-in"><span><span class="va">t3.9</span> <span class="op">&lt;-</span> <span class="fu">create_t3.8_and_t3.9</span><span class="op">(</span>data <span class="op">=</span> <span class="va">dth_data</span>, est_data <span class="op">=</span> <span class="va">dth_est</span>,</span></span>
-<span class="r-in"><span>                            date_var <span class="op">=</span> <span class="va">dodyr</span>, data_year <span class="op">=</span> <span class="fl">2022</span>, by_var <span class="op">=</span> <span class="va">rgn</span>,</span></span>
+<span class="r-in"><span>                            date_var <span class="op">=</span> <span class="va">dodyr</span>, data_year <span class="op">=</span> <span class="fl">2022</span>, by_var <span class="op">=</span> <span class="va">birth1c</span>,</span></span>
 <span class="r-in"><span>                            topic <span class="op">=</span> <span class="st">"deaths"</span>, tablename <span class="op">=</span> <span class="st">"Table_3_9"</span><span class="op">)</span></span></span>
 <span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in eval(expr, envir, enclos):</span> object 'dth_data' not found</span>
 <span class="r-in"><span></span></span>

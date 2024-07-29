@@ -11,7 +11,7 @@ and `datac2`, which categorizes this difference into "current", "late", or "dela
 
     <a class="navbar-brand me-2" href="../index.html">crvsreportpackage</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.10</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.2.1</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -86,8 +86,7 @@ and `datac2`, which categorizes this difference into "current", "late", or "dela
 <span class="r-in"><span>  birth1a <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'2023-01-01'</span>, <span class="st">'2022-01-01'</span>, <span class="st">'2020-01-01'</span>, <span class="st">'2023-06-01'</span><span class="op">)</span><span class="op">)</span>,</span></span>
 <span class="r-in"><span>  birth1b <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/as.Date.html" class="external-link">as.Date</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/c.html" class="external-link">c</a></span><span class="op">(</span><span class="st">'2023-01-15'</span>, <span class="st">'2022-02-15'</span>, <span class="st">'2021-06-01'</span>, <span class="st">'2024-06-01'</span><span class="op">)</span><span class="op">)</span></span></span>
 <span class="r-in"><span><span class="op">)</span></span></span>
-<span class="r-in"><span><span class="fu">compute_date_differences</span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span></span>
-<span class="r-err co"><span class="r-pr">#&gt;</span> <span class="error">Error in compute_date_differences(df):</span> could not find function "compute_date_differences"</span>
+<span class="r-in"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu">construct_timeliness</span><span class="op">(</span><span class="va">df</span><span class="op">)</span></span></span>
 </code></pre></div>
     </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
