@@ -84,48 +84,105 @@ the creation of CRVS reports from record level data. It will produce
 tables in line with the best practice for CRVS reports.</p>
 </div>
 <div class="section level2">
-<h2 id="installation">Installation<a class="anchor" aria-label="anchor" href="#installation"></a>
+<h2 id="developer-installation">Developer Installation<a class="anchor" aria-label="anchor" href="#developer-installation"></a>
 </h2>
-<p>You can install this development version from GitHub, you can use the
-<code>devtools</code> package:</p>
-<div class="sourceCode" id="cb1"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span></span>
-<span><span class="co"># Install devtools if you don't already have it</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="va">devtools</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Install the crvsreportpackage from GitHub</span></span>
-<span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install_github</span><span class="op">(</span><span class="st">"tech-acs/crvsreportpackage"</span><span class="op">)</span></span></code></pre></div>
-<p>Once installed, you can load the package using:</p>
+<p>If you want to develop the package, you may want to consider cloning
+the repository and following the steps below to have the correct
+environment to improve the package. First, install the
+<code>crvsreportpackage</code> from GitHub, then ensure all package
+dependencies are correctly managed and installed using
+<code>renv</code>:</p>
+<p>1.__Clone the repository__:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/tech-acs/crvsreportpackage.git</span>
+<span id="cb1-2"><a href="#cb1-2" tabindex="-1"></a><span class="bu">cd</span> crvsreportpackage</span></code></pre></div>
+<p>2.__Initialize the <code>renv</code> environment__: Upon first
+entering the package directory, <code>renv</code> will activate the
+specific package environment defined for <code>crvsreportpackage</code>.
+You need to run the following R commands to restore the required
+packages:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://tech-acs.github.io/crvsreportpackage/">crvsreportpackage</a></span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"renv"</span><span class="op">)</span></span>
+<span><span class="fu">renv</span><span class="fu">::</span><span class="fu"><a href="https://rstudio.github.io/renv/reference/restore.html" class="external-link">restore</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>This will read the <code>renv.lock</code> file which contains the
+dependencies and install the correct versions of all required
+packages.</p>
+<p>3.__Install the package__: Once the environment is set up, you can
+install the package using:</p>
+<div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
+<p>By following these steps, you will ensure that you have all the
+necessary dependencies and the correct versions installed, allowing
+<code>crvsreportpackage</code> to function as intended. It will also
+mean you can now open the project and develop the package further.</p>
 </div>
 <div class="section level2">
-<h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
+<h2 id="maintenance">Maintenance<a class="anchor" aria-label="anchor" href="#maintenance"></a>
 </h2>
-<p>This should outline how someone can use the package to build a
-particular table or check what tables they can produce given the data
-they have.</p>
+<p>Once you have made significant changes to the package, it might be
+worth considering changing the package version. This can be done in the
+DESCRIPTION file, bumping up the <code>Version</code> variable. In order
+to rebuild and update the <code>crvsreportpackage</code> after making
+some changes to the functions in it follow these steps:</p>
+<div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="co"># Remove the installed version of the package</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/utils/remove.packages.html" class="external-link">remove.packages</a></span><span class="op">(</span><span class="st">"crvsreportpackage"</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Clear your R environment</span></span>
+<span><span class="fu"><a href="https://rdrr.io/r/base/rm.html" class="external-link">rm</a></span><span class="op">(</span>list <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ls.html" class="external-link">ls</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Restart R session (do this manually or with RStudio shortcut Ctrl+Shift+F10)</span></span>
+<span></span>
+<span><span class="co"># Initialize renv if not already done</span></span>
+<span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="st">"renv"</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/installed.packages.html" class="external-link">installed.packages</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
+<span>  <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"renv"</span><span class="op">)</span></span>
+<span><span class="op">}</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rstudio.github.io/renv/" class="external-link">renv</a></span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Restore the environment</span></span>
+<span><span class="fu">renv</span><span class="fu">::</span><span class="fu"><a href="https://rstudio.github.io/renv/reference/restore.html" class="external-link">restore</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Update the lockfile</span></span>
+<span><span class="fu">renv</span><span class="fu">::</span><span class="fu"><a href="https://rstudio.github.io/renv/reference/snapshot.html" class="external-link">snapshot</a></span><span class="op">(</span><span class="op">)</span></span>
+<span></span>
+<span><span class="co"># Recreate documentation and rebuild the package</span></span>
+<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://devtools.r-lib.org/" class="external-link">devtools</a></span><span class="op">)</span></span>
+<span><span class="fu">document</span><span class="op">(</span><span class="op">)</span>  <span class="co"># Generates the NAMESPACE file and documentation using roxygen2</span></span>
+<span><span class="fu">build</span><span class="op">(</span><span class="op">)</span>     <span class="co"># Builds the package</span></span>
+<span><span class="fu"><a href="https://rstudio.github.io/renv/reference/install.html" class="external-link">install</a></span><span class="op">(</span><span class="op">)</span>   <span class="co"># Installs the package</span></span></code></pre></div>
+<p>After these steps the package should be installed with the latest
+changes to the functions. This should mean the package is in the right
+state to be updated on the online repo.</p>
+<p>Before you make any big changes, double check that all the unit test
+are working as expected, by running them manually:</p>
+<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
+<code class="sourceCode R"><span><span class="fu">testthat</span><span class="fu">::</span><span class="fu"><a href="https://testthat.r-lib.org/reference/test_dir.html" class="external-link">test_dir</a></span><span class="op">(</span><span class="st">"tests/testthat"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="data-included-in-the-package">Data Included in the Package<a class="anchor" aria-label="anchor" href="#data-included-in-the-package"></a>
 </h2>
-<p>Ideally the package will have some test data that is synthetic so
-that people can see what the desired input data should look like as well
-as see how the validation checks take place as well as test outputs.</p>
+<p>The package has four test datasets, one for each of:</p>
+<ul>
+<li>Birth data: Use the <code><a href="../reference/read_sample_birth_data.html">read_sample_birth_data()</a></code>
+function.</li>
+<li>Death data: Use the <code><a href="../reference/read_sample_death_data.html">read_sample_death_data()</a></code>
+function.</li>
+<li>Marriages data: Use the <code><a href="../reference/read_sample_marriage_data.html">read_sample_marriage_data()</a></code>
+function.</li>
+<li>Divorce data: Use the <code><a href="../reference/read_sample_divorce_data.html">read_sample_divorce_data()</a></code>
+function.</li>
+</ul>
 <p>This test data should also serve as a good tool in order to test
 existing features or develop new ones.</p>
 </div>
 <div class="section level2">
-<h2 id="conclusion">Conclusion<a class="anchor" aria-label="anchor" href="#conclusion"></a>
-</h2>
-<p>A short bit on information on what the package can be used for.</p>
-</div>
-<div class="section level2">
 <h2 id="further-reading">Further Reading<a class="anchor" aria-label="anchor" href="#further-reading"></a>
 </h2>
-<p>Links to some of the material that shows how to implement this, such
-as the report_crvs codebase and the best practice documents for CRVS
-reports.</p>
+<p><a href="https://r-pkgs.org/" class="external-link">R packages</a> by Hadley Wickham and
+Jenny Bryan is the canonical guide to R package development.</p>
+<p>The <a href="https://psyteachr.github.io" class="external-link">PsyTeachR</a> Coding Club
+at the University of Glasgow School of Psychology &amp; Neuroscience
+also have some really <a href="https://psyteachr.github.io/intro-r-pkgs/" class="external-link">helpful resources</a>
+(a book, YouTube videos) on building R packages.</p>
 </div>
   </main><aside class="col-md-3"><nav id="toc" aria-label="Table of contents"><h2>On this page</h2>
     </nav></aside>

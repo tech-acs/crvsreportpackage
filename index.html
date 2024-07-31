@@ -105,61 +105,9 @@
 </div>
 </div>
 <div class="section level2">
-<h2 id="developer-installation">Developer Installation<a class="anchor" aria-label="anchor" href="#developer-installation"></a>
-</h2>
-<p>If you want to develop the package, you may want to consider cloning the repository and following the steps below to have the correct environment to improve the package. First, install the <code>crvsreportpackage</code> from GitHub, then ensure all package dependencies are correctly managed and installed using <code>renv</code>:</p>
-<p>1.__Clone the repository__:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode sh"><code class="sourceCode bash"><span id="cb4-1"><a href="#cb4-1" tabindex="-1"></a><span class="fu">git</span> clone https://github.com/tech-acs/crvsreportpackage.git</span>
-<span id="cb4-2"><a href="#cb4-2" tabindex="-1"></a><span class="bu">cd</span> crvsreportpackage</span></code></pre></div>
-<p>2.__Initialize the <code>renv</code> environment__: Upon first entering the package directory, <code>renv</code> will activate the specific package environment defined for <code>crvsreportpackage</code>. You need to run the following R commands to restore the required packages:</p>
-<div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"renv"</span><span class="op">)</span></span>
-<span><span class="fu">renv</span><span class="fu">::</span><span class="fu"><a href="https://rstudio.github.io/renv/reference/restore.html" class="external-link">restore</a></span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<p>This will read the <code>renv.lock</code> file which contains the dependencies and install the correct versions of all required packages.</p>
-<p>3.__Install the package__: Once the environment is set up, you can install the package using:</p>
-<div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">devtools</span><span class="fu">::</span><span class="fu">install</span><span class="op">(</span><span class="op">)</span></span></code></pre></div>
-<p>By following these steps, you will ensure that you have all the necessary dependencies and the correct versions installed, allowing <code>crvsreportpackage</code> to function as intended. It will also mean you can now open the project and develop the package further.</p>
-</div>
-<div class="section level2">
-<h2 id="maintenance">Maintenance<a class="anchor" aria-label="anchor" href="#maintenance"></a>
-</h2>
-<p>Once you have made significant changes to the package, it might be worth considering changing the package version. This can be done in the DESCRIPTION file, bumping up the <code>Version</code> variable. In order to rebuild and update the <code>crvsreportpackage</code> after making some changes to the functions in it follow these steps:</p>
-<div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="co"># Remove the installed version of the package</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/utils/remove.packages.html" class="external-link">remove.packages</a></span><span class="op">(</span><span class="st">"crvsreportpackage"</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Clear your R environment</span></span>
-<span><span class="fu"><a href="https://rdrr.io/r/base/rm.html" class="external-link">rm</a></span><span class="op">(</span>list <span class="op">=</span> <span class="fu"><a href="https://rdrr.io/r/base/ls.html" class="external-link">ls</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Restart R session (do this manually or with RStudio shortcut Ctrl+Shift+F10)</span></span>
-<span></span>
-<span><span class="co"># Initialize renv if not already done</span></span>
-<span><span class="kw">if</span> <span class="op">(</span><span class="op">!</span><span class="st">"renv"</span> <span class="op"><a href="https://rdrr.io/r/base/match.html" class="external-link">%in%</a></span> <span class="fu"><a href="https://rdrr.io/r/utils/installed.packages.html" class="external-link">installed.packages</a></span><span class="op">(</span><span class="op">)</span><span class="op">)</span> <span class="op">{</span></span>
-<span>  <span class="fu"><a href="https://rdrr.io/r/utils/install.packages.html" class="external-link">install.packages</a></span><span class="op">(</span><span class="st">"renv"</span><span class="op">)</span></span>
-<span><span class="op">}</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://rstudio.github.io/renv/" class="external-link">renv</a></span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Restore the environment</span></span>
-<span><span class="fu">renv</span><span class="fu">::</span><span class="fu"><a href="https://rstudio.github.io/renv/reference/restore.html" class="external-link">restore</a></span><span class="op">(</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Update the lockfile</span></span>
-<span><span class="fu">renv</span><span class="fu">::</span><span class="fu"><a href="https://rstudio.github.io/renv/reference/snapshot.html" class="external-link">snapshot</a></span><span class="op">(</span><span class="op">)</span></span>
-<span></span>
-<span><span class="co"># Recreate documentation and rebuild the package</span></span>
-<span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://devtools.r-lib.org/" class="external-link">devtools</a></span><span class="op">)</span></span>
-<span><span class="fu">document</span><span class="op">(</span><span class="op">)</span>  <span class="co"># Generates the NAMESPACE file and documentation using roxygen2</span></span>
-<span><span class="fu">build</span><span class="op">(</span><span class="op">)</span>     <span class="co"># Builds the package</span></span>
-<span><span class="fu"><a href="https://rstudio.github.io/renv/reference/install.html" class="external-link">install</a></span><span class="op">(</span><span class="op">)</span>   <span class="co"># Installs the package</span></span></code></pre></div>
-<p>After these steps the package should be installed with the latest changes to the functions. This should mean the package is in the right state to be updated on the online repo.</p>
-<p>Before you make any big changes, double check that all the unit test are working as expected, by running them manually:</p>
-<div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="fu">testthat</span><span class="fu">::</span><span class="fu"><a href="https://testthat.r-lib.org/reference/test_dir.html" class="external-link">test_dir</a></span><span class="op">(</span><span class="st">"tests/testthat"</span><span class="op">)</span></span></code></pre></div>
-</div>
-<div class="section level2">
 <h2 id="documentation">Documentation<a class="anchor" aria-label="anchor" href="#documentation"></a>
 </h2>
-<p>We are currently working on our documentation, this will soon be available in website format.</p>
+<p>The documentation for the package is available in the website link that should be highlighted on the main page of the repository on the top right.</p>
 </div>
 <div class="section level2">
 <h2 id="contributing">Contributing<a class="anchor" aria-label="anchor" href="#contributing"></a>
