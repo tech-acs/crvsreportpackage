@@ -205,8 +205,8 @@ into a factor.</p>
 <p>Sometimes the order of levels in a factor variable is not very
 helpful. The <a href="https://forcats.tidyverse.org/reference/fct_relevel.html" class="external-link"><code>fct_relevel()</code></a>
 function allows you to customise the order of levels. Here we reorder
-the values of <code>birth1g</code> (Type of birth) so that “Quadruplet
-or higher” comes last.</p>
+the values of <code>birth1g</code> (Type of birth) so that “Single”
+comes first.</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span><span class="op">$</span><span class="va">birth1g</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/base/levels.html" class="external-link">levels</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; [1] "Triplet"              "Twin"                 "Single"              </span></span>
@@ -218,14 +218,11 @@ or higher” comes last.</p>
 <div class="section level2">
 <h2 id="unhelpfully-coded-values">Unhelpfully coded values<a class="anchor" aria-label="anchor" href="#unhelpfully-coded-values"></a>
 </h2>
-<p>Sometimes values of a variable are coded unhelpfully. For example,
-the sex of a newborn baby may be recorded as “M” and “F” or 0 and 1.</p>
-<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="va">df</span><span class="op">$</span><span class="va">birth2a</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://rdrr.io/r/base/levels.html" class="external-link">levels</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; NULL</span></span></code></pre></div>
-<p>We can easily recode these so that they are more readable. The <a href="https://forcats.tidyverse.org/reference/fct_recode.html" class="external-link"><code>fct_recode()</code></a>
+<p>Often values of a variable are coded unhelpfully. For example, the
+sex of a newborn baby may be recorded as “M” and “F” or 0 and 1. We can
+easily recode these so that they are more readable. The <a href="https://forcats.tidyverse.org/reference/fct_recode.html" class="external-link"><code>fct_recode()</code></a>
 function enables you to change factor levels by hand.</p>
-<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span><span class="op">$</span><span class="va">birth2a</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://forcats.tidyverse.org/reference/fct_recode.html" class="external-link">fct_recode</a></span><span class="op">(</span>Female <span class="op">=</span> <span class="st">"F"</span>, Male <span class="op">=</span> <span class="st">"M"</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://rdrr.io/r/base/levels.html" class="external-link">levels</a></span><span class="op">(</span><span class="op">)</span></span>
@@ -239,11 +236,11 @@ or even ““. For example, the place of occurrence might not be recorded
 and left blank. We can recode these missing values to a more explicit NA
 using the <a href="https://dplyr.tidyverse.org/reference/na_if.html" class="external-link"><code>na_if()</code></a>
 function.</p>
-<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span><span class="va">df</span>, birth1c <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/na_if.html" class="external-link">na_if</a></span><span class="op">(</span><span class="va">birth1c</span>, <span class="st">""</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 <p>To identify how many missing values there are in each column we can
 run:</p>
-<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op">|&gt;</span> <span class="fu"><a href="https://purrr.tidyverse.org/reference/map.html" class="external-link">map_dbl</a></span><span class="op">(</span><span class="op">~</span><span class="fu"><a href="https://rdrr.io/r/base/sum.html" class="external-link">sum</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">.</span><span class="op">)</span><span class="op">)</span><span class="op">)</span></span>
 <span><span class="co">#&gt;      id birth1a birth1b birth1c birth1g birth1h birth1i birth2a birth3b </span></span>
 <span><span class="co">#&gt;       0       0       0      24       0       0     159       0       3</span></span></code></pre></div>
@@ -253,7 +250,7 @@ run:</p>
 impute them as an average. For example, there are 3 missing values in
 <code>birth3b</code> which is the age of the mother. We can impute the
 mean age with:</p>
-<div class="sourceCode" id="cb13"><pre class="downlit sourceCode r">
+<div class="sourceCode" id="cb12"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="va">df</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span>birth3b <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/case_when.html" class="external-link">case_when</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/NA.html" class="external-link">is.na</a></span><span class="op">(</span><span class="va">birth3b</span><span class="op">)</span> <span class="op">~</span> <span class="fu"><a href="https://rdrr.io/r/base/integer.html" class="external-link">as.integer</a></span><span class="op">(</span><span class="fu"><a href="https://rdrr.io/r/base/mean.html" class="external-link">mean</a></span><span class="op">(</span><span class="va">birth3b</span>, na.rm <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span><span class="op">)</span>, <span class="cn">TRUE</span> <span class="op">~</span> <span class="va">birth3b</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
 </div>
