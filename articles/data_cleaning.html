@@ -153,11 +153,12 @@ and day.</p>
 <h2 id="dates-out-of-sequence">Dates out of sequence<a class="anchor" aria-label="anchor" href="#dates-out-of-sequence"></a>
 </h2>
 <p>There may be inputting errors in the civil registration data such as
-the date of occurrence being recorded <em>after</em> the date of
-registration. To identify those records that are out of sync we can use
-a simple filter. The code below selects all of the rows where the date
-of occurrence is <em>after</em> the date of registration and prints out
-selected columns.</p>
+<code>birth1a</code> (Date of occurrence, Event) being recorded
+<em>after</em> <code>birth1b</code> (Date of registration, Event). To
+identify those records that are out of sync we can use a simple filter.
+The code below selects all of the rows where <code>birth1a</code> (Date
+of occurrence, Event) is <em>after</em> <code>birth1b</code> (Date of
+registration, Event) and prints out selected columns.</p>
 <div class="sourceCode" id="cb5"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="https://dplyr.tidyverse.org/reference/filter.html" class="external-link">filter</a></span><span class="op">(</span><span class="va">df</span>, <span class="va">birth1a</span> <span class="op">&gt;</span> <span class="va">birth1b</span><span class="op">)</span> <span class="op">|&gt;</span> </span>
 <span>  <span class="fu"><a href="https://dplyr.tidyverse.org/reference/select.html" class="external-link">select</a></span><span class="op">(</span><span class="va">id</span>, <span class="va">birth1a</span>, <span class="va">birth1b</span><span class="op">)</span></span>
@@ -187,6 +188,10 @@ which should be unique. The code below groups the data by
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">3</span>   173 2024-07-08 2024-08-03 <span style="color: #949494;">""</span>      Quadruple… Doctor  Hospit… F            85</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">4</span>   173 2024-07-08 2024-08-03 <span style="color: #949494;">""</span>      Quadruple… Doctor  Hospit… F            85</span></span>
 <span><span class="co">#&gt; <span style="color: #BCBCBC;">5</span>   173 2024-07-08 2024-08-03 <span style="color: #949494;">""</span>      Quadruple… Doctor  Hospit… F            85</span></span></code></pre></div>
+<p>When no id variable is present in the data you could create a unique
+identifier by concatenating one or more values. This could be achieved
+with the <a href="https://tidyr.tidyverse.org/reference/unite.html" class="external-link"><code>join()</code></a>
+function.</p>
 </div>
 <div class="section level2">
 <h2 id="characters-as-factors">Characters as factors<a class="anchor" aria-label="anchor" href="#characters-as-factors"></a>
@@ -234,16 +239,20 @@ function enables you to change factor levels by hand.</p>
 <span><span class="co">#&gt; [1] "Female" "Male"</span></span></code></pre></div>
 </div>
 <div class="section level2">
-<h2 id="checking-missing-data">Checking missing data<a class="anchor" aria-label="anchor" href="#checking-missing-data"></a>
+<h2 id="convert-values-to-na">Convert values to NA<a class="anchor" aria-label="anchor" href="#convert-values-to-na"></a>
 </h2>
 <p>Missing values are recorded in a variety of ways e.g. 999999, NULL,
-or even ““. We can recode these missing values to a more explicit NA
+or even ” “. We can recode these missing values to a more explicit NA
 using the <a href="https://dplyr.tidyverse.org/reference/na_if.html" class="external-link"><code>na_if()</code></a>
 function. The variable <code>birth1c</code> (Place of occurrence, Event)
-includes a number of missing values that have been recorded as”“. We can
-replace these with NA using the code below.</p>
+includes a number of missing values that have been recorded as” “. We
+can replace these with NA using the code below.</p>
 <div class="sourceCode" id="cb10"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="va">df</span> <span class="op">&lt;-</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/mutate.html" class="external-link">mutate</a></span><span class="op">(</span><span class="va">df</span>, birth1c <span class="op">=</span> <span class="fu"><a href="https://dplyr.tidyverse.org/reference/na_if.html" class="external-link">na_if</a></span><span class="op">(</span><span class="va">birth1c</span>, <span class="st">""</span><span class="op">)</span><span class="op">)</span></span></code></pre></div>
+</div>
+<div class="section level2">
+<h2 id="checking-missing-data">Checking missing data<a class="anchor" aria-label="anchor" href="#checking-missing-data"></a>
+</h2>
 <p>To identify how many missing values there are in the whole dataset we
 can run:</p>
 <div class="sourceCode" id="cb11"><pre class="downlit sourceCode r">
